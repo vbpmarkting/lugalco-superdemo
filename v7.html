@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es" data-ver="7">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lugalco · Versión 7 Cámara fría</title>
+<meta name="description" content="Superdemo de Lugalco: catálogo, Umami Lab, fichas, área cliente y panel.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="shared/base.css"><link rel="stylesheet" href="shared/client.css"><link rel="stylesheet" href="shared/extra.css"><link rel="stylesheet" href="skins/v7.css">
+</head>
+<body>
+<p class="lg-demo" data-t="demo">Demo: datos, tarifas y envases provisionales</p>
+<header class="lg-header">
+  <a href="#" class="lg-logo" data-home aria-label="Lugalco, inicio"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 13c6-7 11 7 17 0s11 7 16 0M4 21c6-7 11 7 17 0s11 7 16 0M4 29c6-7 11 7 17 0s11 7 16 0" stroke="currentColor" stroke-width="2.5"/></svg> lugalco</a>
+  <nav class="lg-nav" aria-label="Principal"><a href="#lugalco" data-t="navLugalco">Lugalco</a><a href="#lab" data-t="navLab">Umami Lab</a><a href="#productos" data-t="navProducts">Productos</a><a href="#como-pedir" data-t="navHow">Cómo pedir</a></nav>
+  <div class="lg-langs" role="group" aria-label="Idioma"><button type="button" data-lang="es">ES</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+  <a class="lg-btn" data-client href="cliente.html" data-t="clientArea">Área cliente</a>
+</header>
+<main>
+<section class="v7-hero" id="v7-hero" aria-label="Lugalco">
+  <div class="v7-scene" aria-hidden="true"><span class="v7-ghost">umami</span><img class="v7-bag b0" src="assets/productos-demo/serie-umami/frontal-gamba-pelada.webp" alt=""><img class="v7-bag b1" src="assets/productos-demo/serie-umami/frontal-patata-99.webp" alt=""><img class="v7-bag b2" src="assets/productos-demo/serie-umami/frontal-hamburguesa.webp" alt=""><img class="v7-bag b3" src="assets/productos-demo/serie-umami/frontal-pollo-empanado.webp" alt=""><img class="v7-bag b4" src="assets/productos-demo/serie-umami/frontal-patata-77.webp" alt=""></div>
+  <div class="v7-frost" aria-hidden="true"></div>
+  <div class="v7-copy">
+    <p class="v7-kicker" data-t="heroKicker">Lugalco · Vigo</p>
+    <h1 class="v7-word" aria-label="Lugalco"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 13c6-7 11 7 17 0s11 7 16 0M4 21c6-7 11 7 17 0s11 7 16 0M4 29c6-7 11 7 17 0s11 7 16 0" stroke="currentColor" stroke-width="3"/></svg><span aria-hidden="true">lugalco</span></h1>
+    <p class="v7-lead" data-t="heroLead"></p>
+    <div class="v7-actions"><a class="v7-btn" href="#cartera" data-t="cartKicker">Nuestra cartera</a><a class="v7-btn v7-btn-line" data-client href="cliente.html" data-t="askQuote">Pedir cotización</a></div>
+    <ul class="v7-stats" data-stats></ul>
+    <p class="v7-hint" data-t="v7Hint">Pasa el ratón y descongela</p>
+  </div>
+</section>
+<div id="lg-sections"></div>
+</main>
+<nav class="ver-switch" aria-label="Versión visual"><a href="v1.html" data-v="1">1<span class="n"> · Storefront</span></a><a href="v2.html" data-v="2">2<span class="n"> · Glass</span></a><a href="v3.html" data-v="3">3<span class="n"> · Cálido</span></a><a href="v4.html" data-v="4">4<span class="n"> · Pop</span></a><a href="v5.html" data-v="5">5<span class="n"> · Lugalco</span></a><a href="v6.html" data-v="6">6<span class="n"> · Lugalco+</span></a><a href="v7.html" data-v="7">7<span class="n"> · Cámara fría</span></a></nav><script>(function(){var v=document.documentElement.dataset.ver;document.querySelectorAll(".ver-switch a").forEach(function(a){if(a.dataset.v===v)a.setAttribute("aria-current","page")})})()</script><script src="data/catalogo.js"></script><script src="data/fichas-productos.js"></script><script src="data/tarifas-demo.js"></script><script src="shared/i18n.js"></script><script src="shared/i18n-extra.js"></script><script src="shared/store.js"></script><script src="shared/ficha.js"></script><script src="shared/hero.js"></script><script src="shared/portal.js"></script><script src="shared/fx.js"></script>
+</body>
+</html>

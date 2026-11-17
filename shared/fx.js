@@ -1,6 +1,6 @@
 // Efectos de movimiento (solo se activan en la versión 4 y respetan "reducir movimiento")
 (() => {
-  if (!['4', '5', '6'].includes(document.documentElement.dataset.ver)) return;
+  if (!['4', '5', '6', '7'].includes(document.documentElement.dataset.ver)) return;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   // Abanico de envases: se mueve con el ratón o el dedo
   const fan = document.getElementById('v4-fan');
@@ -46,6 +46,38 @@
     addEventListener('scroll', update, { passive: true });
     addEventListener('resize', update); new MutationObserver(update).observe(document.getElementById('lg-sections'), { childList: true }); update();
   }
+
+  // Versión 7 · Cámara fría: hielo que se descongela con el puntero y pasillo horizontal de congeladores
+  if (document.documentElement.dataset.ver === '7') {
+    const hero = document.getElementById('v7-hero');
+    if (hero) {
+      let tx = .72, ty = .4, x = tx, y = ty, touched = false, t0 = performance.now();
+      const set = () => { hero.style.setProperty('--x', (x * 100).toFixed(2) + '%'); hero.style.setProperty('--y', (y * 100).toFixed(2) + '%'); };
+      hero.addEventListener('pointermove', e => { const r = hero.getBoundingClientRect(); tx = (e.clientX - r.left) / r.width; ty = (e.clientY - r.top) / r.height; touched = true; hero.classList.add('is-touched'); });
+      const loop = t => {
+        if (!touched) { const k = (t - t0) / 1000; if (innerWidth <= 860) { tx = .5 + Math.cos(k * .9) * .32; ty = .8 + Math.sin(k * 1.3) * .1; } else { tx = .62 + Math.cos(k * .9) * .26; ty = .45 + Math.sin(k * 1.3) * .22; } }
+        x += (tx - x) * .12; y += (ty - y) * .12; set(); requestAnimationFrame(loop);
+      };
+      set();
+      if (reduce) { hero.style.setProperty('--x', '70%'); hero.style.setProperty('--y', '45%'); } else requestAnimationFrame(loop);
+    }
+    const aisle = () => document.querySelector('.lg-aisle');
+    const clamp = v => Math.max(0, Math.min(1, v));
+    const walk = () => {
+      const a = aisle(); if (!a) return; const track = a.querySelector('.lg-aisle-track'), cabs = a.querySelectorAll('.lg-cab');
+      const pinned = innerWidth > 860;
+      if (!pinned) { a.style.height = ''; track.style.transform = ''; cabs.forEach(c => c.classList.add('is-open')); return; }
+      const dist = Math.max(0, track.scrollWidth - innerWidth + 120);
+      a.style.height = (dist + innerHeight) + 'px';
+      const p = clamp(-a.getBoundingClientRect().top / Math.max(1, dist));
+      track.style.transform = 'translate3d(' + (-p * dist).toFixed(1) + 'px,0,0)';
+      a.style.setProperty('--ap', p.toFixed(3));
+      cabs.forEach(c => { const r = c.getBoundingClientRect(), mid = r.left + r.width / 2; c.classList.toggle('is-open', mid > innerWidth * .12 && mid < innerWidth * .88); });
+    };
+    addEventListener('scroll', walk, { passive: true }); addEventListener('resize', walk);
+    new MutationObserver(walk).observe(document.getElementById('lg-sections'), { childList: true }); walk();
+    addEventListener('load', walk);
+  }
   // Números que cuentan
   const count = ul => {
     ul.querySelectorAll('b').forEach(b => {
@@ -54,6 +86,6 @@
       requestAnimationFrame(step);
     });
   };
-  const stats = document.querySelector('.v4-stats,.v5-stats,.v6-stats');
+  const stats = document.querySelector('.v4-stats,.v5-stats,.v6-stats,.v7-stats');
   if (stats && io) { const so = new IntersectionObserver(es => { if (es[0].isIntersecting) { count(stats); so.disconnect(); } }, { threshold: .5 }); so.observe(stats); }
 })();

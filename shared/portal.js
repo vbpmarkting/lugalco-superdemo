@@ -45,12 +45,27 @@
   }
   function renderLab() { const el = root.querySelector('#lg-lab-stage'); if (el) el.innerHTML = labStage(); root.querySelectorAll('[data-lab]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lab === state.lab))); }
 
-  const v5 = ['5', '6'].includes(LG.ver), v6 = LG.ver === '6';
+  const v7 = LG.ver === '7', v5 = ['5', '6', '7'].includes(LG.ver), v6 = LG.ver === '6';
   const cnt = b => products.filter(x => x.brand === b).length;
   const topFams = b => { const c = {}; products.filter(x => x.brand === b).forEach(x => { c[x.category] = (c[x.category] || 0) + 1; }); return Object.entries(c).sort((a, b2) => b2[1] - a[1]).slice(0, 3).map(([k]) => t('fam')[k]); };
   const BC = { Friusa: '#5fd6c2', Eurofrits: '#ff9b73', Gelagri: '#a5e06d', Doux: '#ff8fae', Caterfrits: '#a9b4ff' };
   const peek = b => `<ul class="lg-tile-peek" aria-hidden="true">${products.filter(x => x.brand === b).slice(0, 3).map(x => `<li><b>${esc(x.name)}</b><span>${esc(x.format)}</span></li>`).join('')}</ul>`;
   const flyPicks = () => { const pref = ['umami-gamba-pelada', 'umami-patata-99', 'umami-hamburguesa', 'umami-pollo-empanado', 'umami-patata-77'].map(id => products.find(x => x.id === id)).filter(Boolean); umami.forEach(x => { if (pref.length < 5 && !pref.includes(x)) pref.push(x); }); return pref.slice(0, 5); };
+  const CAB = { Friusa: '#5fd6c2', Eurofrits: '#ff9b73', Gelagri: '#a5e06d', Doux: '#ff8fae', Caterfrits: '#a9b4ff' };
+  const names = b => [...new Set(products.filter(x => x.brand === b).map(x => x.name))].slice(0, 7);
+  function aisle() {
+    const um = flyPicks();
+    const shelf = (items) => `<div class="lg-shelf">${items}</div>`;
+    const umCab = `<article class="lg-cab is-umami is-open" id="cab-umami"><header><span class="lg-tag">${esc(t('cartOwn'))}</span><h3>umami</h3></header>
+      <div class="lg-cab-glass"><div class="lg-cab-in">${shelf(um.slice(0, 3).map((x, i) => `<img src="${esc(image(x))}" alt="${esc(x.name)}" loading="lazy" style="--i:${i}">`).join(''))}${shelf(um.slice(3, 5).concat(umami.filter(x => !um.includes(x)).slice(0, 1)).map((x, i) => `<img src="${esc(image(x))}" alt="${esc(x.name)}" loading="lazy" style="--i:${i + 3}">`).join(''))}</div>
+        <i class="lg-door l"></i><i class="lg-door r"></i></div>
+      <footer><span><b>${esc(t('refs')(cnt('Umami')))}</b><br><small>${esc(t('cartUmamiText'))}</small></span><a class="lg-btn" href="#lab">${esc(t('cartUmamiCta'))}</a></footer></article>`;
+    const cabs = brands.map(b => `<button type="button" class="lg-cab" data-brand-filter="${b}" style="--bc:${CAB[b]}"><header><span class="lg-tag">${esc(t('cartPartner'))}</span><h3>${b}</h3></header>
+      <div class="lg-cab-glass"><div class="lg-cab-in">${names(b).map(n => `<span class="lg-slot">${esc(n)}</span>`).join('')}</div><i class="lg-door l"></i><i class="lg-door r"></i></div>
+      <footer><span><b>${esc(t('refs')(cnt(b)))}</b><br><small>${esc(topFams(b).join(' · '))}</small></span><span class="lg-tile-go">${esc(t('cartSee'))} →</span></footer></button>`).join('');
+    return `<section class="lg-aisle" id="cartera"><div class="lg-aisle-pin"><div class="lg-cartera-head"><p class="lg-kicker">${esc(t('cartKicker'))}</p><h2>${esc(t('cartTitle'))}</h2><p>${esc(t('cartLead'))}</p><p class="lg-aisle-hint" data-t="v7Scroll">${esc(t('v7Scroll'))}</p></div>
+      <div class="lg-aisle-track">${umCab}${cabs}</div></div></section>`;
+  }
   function cartera() {
     const pick = ['umami-gamba-pelada', 'umami-patata-99', 'umami-hamburguesa'].map(id => products.find(x => x.id === id)).filter(Boolean);
     return `<section class="lg-cartera" id="cartera"><div class="lg-cartera-head"><p class="lg-kicker">${esc(t('cartKicker'))}</p><h2>${esc(t('cartTitle'))}</h2><p>${esc(t('cartLead'))}</p></div>
@@ -64,7 +79,7 @@
     const how = t('how');
     root.innerHTML = `
     <section class="lg-about" id="lugalco"><h2>${esc(t('aboutTitle'))}</h2><p>${esc(t('aboutText'))}</p></section>
-    ${v5 ? cartera() : ''}
+    ${v7 ? aisle() : v5 ? cartera() : ''}
     <section class="lg-umami" id="umami">
       <div class="lg-umami-head"><p class="lg-umami-word" aria-hidden="true">umami</p>
         <div><h2>${esc(t('umamiTitle'))}</h2><p>${esc(t('umamiText'))}</p><a class="lg-btn" href="#lab">${esc(t('labTitle'))}</a></div></div>

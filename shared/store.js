@@ -15,7 +15,7 @@ window.LG = (() => {
   const drop = k => { try { localStorage.removeItem(k); } catch { /* sin almacenamiento */ } };
 
   // ---- Versión visual activa (1, 2 o 3): se conserva al ir de la web al área cliente y al panel ----
-  const VERSIONS = { 1: 'storefront', 2: 'glass', 3: 'calido', 4: 'pop', 5: 'lugalco', 6: 'lugalco-plus' };
+  const VERSIONS = { 1: 'storefront', 2: 'glass', 3: 'calido', 4: 'pop', 5: 'lugalco', 6: 'lugalco-plus', 7: 'camara-fria' };
   let ver = '1';
   try { ver = new URLSearchParams(location.search).get('v') || document.documentElement.dataset.ver || localStorage.getItem('lg-sd-ver') || '1'; } catch { /* */ }
   if (!VERSIONS[ver]) ver = '1';
