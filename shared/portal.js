@@ -45,10 +45,23 @@
   }
   function renderLab() { const el = root.querySelector('#lg-lab-stage'); if (el) el.innerHTML = labStage(); root.querySelectorAll('[data-lab]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lab === state.lab))); }
 
+  const v5 = LG.ver === '5';
+  const cnt = b => products.filter(x => x.brand === b).length;
+  const topFams = b => { const c = {}; products.filter(x => x.brand === b).forEach(x => { c[x.category] = (c[x.category] || 0) + 1; }); return Object.entries(c).sort((a, b2) => b2[1] - a[1]).slice(0, 3).map(([k]) => t('fam')[k]); };
+  function cartera() {
+    const pick = ['umami-gamba-pelada', 'umami-patata-99', 'umami-hamburguesa'].map(id => products.find(x => x.id === id)).filter(Boolean);
+    return `<section class="lg-cartera" id="cartera"><div class="lg-cartera-head"><p class="lg-kicker">${esc(t('cartKicker'))}</p><h2>${esc(t('cartTitle'))}</h2><p>${esc(t('cartLead'))}</p></div>
+      <div class="lg-cartera-grid">
+        <article class="lg-tile is-umami"><div class="lg-tile-copy"><span class="lg-tag">${esc(t('cartOwn'))}</span><h3>umami</h3><p>${esc(t('cartUmamiText'))}</p><p class="lg-tile-n">${esc(t('refs')(cnt('Umami')))}</p><a class="lg-btn" href="#lab">${esc(t('cartUmamiCta'))}</a></div>
+          <div class="lg-tile-bags" aria-hidden="true">${pick.map((x, i) => `<img src="${esc(image(x))}" alt="" loading="lazy" style="--i:${i}">`).join('')}</div></article>
+        ${brands.map(b => `<button type="button" class="lg-tile" data-brand-filter="${b}"><span class="lg-tag">${esc(t('cartPartner'))}</span><h3>${b}</h3><p class="lg-tile-n">${esc(t('refs')(cnt(b)))}</p><p class="lg-tile-f">${esc(topFams(b).join(' · '))}</p><span class="lg-tile-go">${esc(t('cartSee'))} →</span></button>`).join('')}
+      </div></section>`;
+  }
   function render() {
     const how = t('how');
     root.innerHTML = `
     <section class="lg-about" id="lugalco"><h2>${esc(t('aboutTitle'))}</h2><p>${esc(t('aboutText'))}</p></section>
+    ${v5 ? cartera() : ''}
     <section class="lg-umami" id="umami">
       <div class="lg-umami-head"><p class="lg-umami-word" aria-hidden="true">umami</p>
         <div><h2>${esc(t('umamiTitle'))}</h2><p>${esc(t('umamiText'))}</p><a class="lg-btn" href="#lab">${esc(t('labTitle'))}</a></div></div>
@@ -56,7 +69,7 @@
         <div class="lg-lab-grid">
           <ul class="lg-lab-list" aria-label="${esc(t('labPick'))}">${umami.map(p => `<li><button type="button" data-lab="${esc(p.id)}" aria-pressed="${p.id === state.lab}"><img src="${esc(image(p))}" alt="" width="44" height="56" loading="lazy"><span>${esc(p.name)}</span></button></li>`).join('')}</ul>
           <div class="lg-lab-stage" id="lg-lab-stage"></div></div></div>
-      <div class="lg-brands"><h3>${esc(t('brandsTitle'))}</h3><ul>${brands.map(b => `<li>${b}</li>`).join('')}</ul><p>${esc(t('brandsNote'))}</p></div>
+      ${v5 ? '' : `<div class="lg-brands"><h3>${esc(t('brandsTitle'))}</h3><ul>${brands.map(b => `<li>${b}</li>`).join('')}</ul><p>${esc(t('brandsNote'))}</p></div>`}
     </section>
     <section class="lg-catalog" id="productos">
       <div class="lg-catalog-head"><h2>${esc(t('catTitle'))}</h2><p>${esc(t('catLead'))}</p></div>
@@ -83,6 +96,12 @@
     if (b.dataset.fam) { state.fam = b.dataset.fam; state.shown = PAGE; root.querySelectorAll('[data-fam]').forEach(x => x.setAttribute('aria-pressed', String(x === b))); renderList(); }
     else if (b.id === 'lg-more') { state.shown += PAGE; renderList(); }
     else if (b.dataset.open) window.LG_FICHA.open(b.dataset.open);
+    else if (b.dataset.brandFilter) {
+      state.brand = b.dataset.brandFilter; state.fam = 'all'; state.q = ''; state.shown = PAGE;
+      root.querySelector('#lg-brand').value = state.brand; root.querySelector('#lg-q').value = '';
+      root.querySelectorAll('[data-fam]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.fam === 'all')));
+      renderList(); document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
+    }
     else if (b.dataset.q) LG.toggleConsulta(b.dataset.q);
     else if (b.dataset.lab) { state.lab = b.dataset.lab; renderLab(); }
     else if (b.dataset.labMode) { state.labMode = b.dataset.labMode; renderLab(); }

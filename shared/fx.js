@@ -1,6 +1,6 @@
 // Efectos de movimiento (solo se activan en la versión 4 y respetan "reducir movimiento")
 (() => {
-  if (document.documentElement.dataset.ver !== '4') return;
+  if (!['4', '5'].includes(document.documentElement.dataset.ver)) return;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   // Abanico de envases: se mueve con el ratón o el dedo
   const fan = document.getElementById('v4-fan');
@@ -24,7 +24,7 @@
   const io = 'IntersectionObserver' in window && !reduce ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('rv-in'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -6% 0px' }) : null;
   const tag = () => {
     if (!io) return;
-    document.querySelectorAll('.lg-about h2,.lg-about p,.lg-umami-head,.lg-lab,.lg-brands,.lg-catalog-head,.lg-card,.lg-how li,.lg-how h2,.lg-how .lg-btn').forEach(el => {
+    document.querySelectorAll('.lg-cartera-head,.lg-tile,.lg-about h2,.lg-about p,.lg-umami-head,.lg-lab,.lg-brands,.lg-catalog-head,.lg-card,.lg-how li,.lg-how h2,.lg-how .lg-btn').forEach(el => {
       if (el.dataset.rv) return; el.dataset.rv = '1'; el.classList.add('rv'); el.style.setProperty('--i', (el.matches('.lg-card') ? [...el.parentNode.children].indexOf(el) % 4 : 0));
       io.observe(el);
     });
@@ -39,6 +39,6 @@
       requestAnimationFrame(step);
     });
   };
-  const stats = document.querySelector('.v4-stats');
+  const stats = document.querySelector('.v4-stats,.v5-stats');
   if (stats && io) { const so = new IntersectionObserver(es => { if (es[0].isIntersecting) { count(stats); so.disconnect(); } }, { threshold: .5 }); so.observe(stats); }
 })();

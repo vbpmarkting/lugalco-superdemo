@@ -23,6 +23,8 @@
     cProductsInReq: 'Productos',
     pNew: 'Nuevas', pAnswered: 'Respondidas', pOrders: 'Pedidos', pTitle: 'Cotizaciones y pedidos', pAdvance: 'Avanzar estado', pNoOrders: 'Cuando un cliente acepte una oferta aparecerá aquí.',
     creditsTitle: 'Créditos y avisos', creditsText: 'Imágenes ilustrativas de productos similares. Envases, animaciones y tarifas son propuestas conceptuales para demo, sin valor contractual.',
+    cartKicker: 'Nuestra cartera', cartTitle: 'Cinco marcas del mercado y una propia.', cartLead: 'Lugalco selecciona y distribuye marcas reconocidas. Umami es la que estamos construyendo nosotros.',
+    refs: n => `${n} referencias`, cartOwn: 'Marca propia', cartSee: 'Ver referencias', cartUmamiCta: 'Entrar al Umami Lab', cartUmamiText: 'Gama inicial de 16 productos con envase propio, pensada para cocinas y distribuidores.', cartPartner: 'Marca distribuida',
     pickerTitle: 'Elige una versión',
   });
   I.extend('en', {
@@ -47,6 +49,8 @@
     cProductsInReq: 'Products',
     pNew: 'New', pAnswered: 'Answered', pOrders: 'Orders', pTitle: 'Quotes and orders', pAdvance: 'Advance status', pNoOrders: 'When a customer accepts an offer it will appear here.',
     creditsTitle: 'Credits and notices', creditsText: 'Illustrative images of similar products. Packs, animations and prices are concept proposals for demo, with no contractual value.',
+    cartKicker: 'Our portfolio', cartTitle: 'Five market brands and one of our own.', cartLead: 'Lugalco selects and distributes established brands. Umami is the one we are building ourselves.',
+    refs: n => `${n} products`, cartOwn: 'Own brand', cartSee: 'See products', cartUmamiCta: 'Enter Umami Lab', cartUmamiText: 'A first range of 16 products with its own packaging, made for kitchens and distributors.', cartPartner: 'Distributed brand',
     pickerTitle: 'Choose a version',
   });
   I.extend('pt', {
@@ -71,6 +75,8 @@
     cProductsInReq: 'Produtos',
     pNew: 'Novas', pAnswered: 'Respondidas', pOrders: 'Pedidos', pTitle: 'Cotações e pedidos', pAdvance: 'Avançar estado', pNoOrders: 'Quando um cliente aceitar uma oferta aparecerá aqui.',
     creditsTitle: 'Créditos e avisos', creditsText: 'Imagens ilustrativas de produtos semelhantes. Embalagens, animações e preços são propostas concetuais para demo, sem valor contratual.',
+    cartKicker: 'A nossa carteira', cartTitle: 'Cinco marcas do mercado e uma própria.', cartLead: 'A Lugalco seleciona e distribui marcas reconhecidas. A Umami é a que estamos a construir.',
+    refs: n => `${n} referências`, cartOwn: 'Marca própria', cartSee: 'Ver referências', cartUmamiCta: 'Entrar no Umami Lab', cartUmamiText: 'Gama inicial de 16 produtos com embalagem própria, pensada para cozinhas e distribuidores.', cartPartner: 'Marca distribuída',
     pickerTitle: 'Escolha uma versão',
   });
 })();

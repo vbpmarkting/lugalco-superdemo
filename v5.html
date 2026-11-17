@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es" data-ver="5">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lugalco · Versión 5 Lugalco</title>
+<meta name="description" content="Superdemo de Lugalco: catálogo, Umami Lab, fichas, área cliente y panel.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="shared/base.css"><link rel="stylesheet" href="shared/client.css"><link rel="stylesheet" href="shared/extra.css"><link rel="stylesheet" href="skins/v5.css">
+</head>
+<body>
+<p class="lg-demo" data-t="demo">Demo: datos, tarifas y envases provisionales</p>
+<header class="lg-header">
+  <a href="#" class="lg-logo" data-home aria-label="Lugalco, inicio"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 13c6-7 11 7 17 0s11 7 16 0M4 21c6-7 11 7 17 0s11 7 16 0M4 29c6-7 11 7 17 0s11 7 16 0" stroke="currentColor" stroke-width="2.5"/></svg> lugalco</a>
+  <nav class="lg-nav" aria-label="Principal"><a href="#lugalco" data-t="navLugalco">Lugalco</a><a href="#lab" data-t="navLab">Umami Lab</a><a href="#productos" data-t="navProducts">Productos</a><a href="#como-pedir" data-t="navHow">Cómo pedir</a></nav>
+  <div class="lg-langs" role="group" aria-label="Idioma"><button type="button" data-lang="es">ES</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+  <a class="lg-btn" data-client href="cliente.html" data-t="clientArea">Área cliente</a>
+</header>
+<main>
+<section class="v5-hero" aria-label="Lugalco">
+  <div class="v5-ticker" aria-hidden="true"><div class="v5-ticker-in"><span>FRIUSA ✺ EUROFRITS ✺ GELAGRI ✺ DOUX ✺ CATERFRITS ✺ <b>UMAMI</b> ✺ FRIUSA ✺ EUROFRITS ✺ GELAGRI ✺ DOUX ✺ CATERFRITS ✺ <b>UMAMI</b> ✺ </span><span>FRIUSA ✺ EUROFRITS ✺ GELAGRI ✺ DOUX ✺ CATERFRITS ✺ <b>UMAMI</b> ✺ FRIUSA ✺ EUROFRITS ✺ GELAGRI ✺ DOUX ✺ CATERFRITS ✺ <b>UMAMI</b> ✺ </span></div></div>
+  <div class="v5-body">
+    <p class="v5-kicker" data-t="heroKicker">Lugalco · Vigo</p>
+    <h1 class="v5-word" aria-label="Lugalco"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 13c6-7 11 7 17 0s11 7 16 0M4 21c6-7 11 7 17 0s11 7 16 0M4 29c6-7 11 7 17 0s11 7 16 0" stroke="currentColor" stroke-width="3"/></svg><span aria-hidden="true">lugalco</span></h1>
+    <div class="v5-row"><div><p class="v5-lead" data-t="heroLead"></p>
+      <div class="v5-actions"><a class="v5-btn" href="#cartera" data-t="cartKicker">Nuestra cartera</a><a class="v5-btn v5-btn-line" data-client href="cliente.html" data-t="askQuote">Pedir cotización</a></div></div>
+    <ul class="v5-stats" data-stats></ul></div>
+    <a class="v5-umami" href="#umami" aria-label="Umami, marca propia"><span class="v5-umami-tag" data-t="cartOwn">Marca propia</span><img src="assets/productos-demo/serie-umami/frontal-patata-99.webp" alt=""><b>umami</b></a>
+  </div>
+  <div class="v5-waves" aria-hidden="true"><i></i><i></i><i></i></div>
+</section>
+<div id="lg-sections"></div>
+</main>
+<nav class="ver-switch" aria-label="Versión visual"><a href="v1.html" data-v="1">1<span class="n"> · Storefront</span></a><a href="v2.html" data-v="2">2<span class="n"> · Glass</span></a><a href="v3.html" data-v="3">3<span class="n"> · Cálido</span></a><a href="v4.html" data-v="4">4<span class="n"> · Pop</span></a><a href="v5.html" data-v="5">5<span class="n"> · Lugalco</span></a></nav><script>(function(){var v=document.documentElement.dataset.ver;document.querySelectorAll(".ver-switch a").forEach(function(a){if(a.dataset.v===v)a.setAttribute("aria-current","page")})})()</script><script src="data/catalogo.js"></script><script src="data/fichas-productos.js"></script><script src="data/tarifas-demo.js"></script><script src="shared/i18n.js"></script><script src="shared/i18n-extra.js"></script><script src="shared/store.js"></script><script src="shared/ficha.js"></script><script src="shared/hero.js"></script><script src="shared/portal.js"></script><script src="shared/fx.js"></script>
+</body>
+</html>

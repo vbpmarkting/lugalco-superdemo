@@ -1,0 +1,157 @@
+/* Versión 5 · Lugalco: Lugalco como marca (azul marino y hielo); el amarillo queda reservado para Umami, protagonista de la cartera */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--bg:#082a44;--surface:#0e3a5d;--fg:#eef6fa;--muted:#a3c0d1;--line:#ffffff26;--accent:#8fdcef;--accent-fg:#06283d;--focus:#8fdcef;--um:#FFBF3F;
+  --header-bg:rgba(8,42,68,.9);--hdr-fg:#eef6fa;--demo-bg:#04182a;--media:#0a3150;--card-bg:#0e3a5d;--radius:20px;--radius-sm:12px;--btn-r:999px;--field:#06283d;
+  --umami-bg:#FFBF3F;--umami-fg:#111;--umami-muted:#3b2f10;--umami-line:#11111150;--lab-bg:#fff6df;
+  --how-bg:#eef6fa;--how-fg:#082a44;--how-muted:#3c5a6e;--how-line:#082a4440;--how-step:#082a44;--foot-bg:#04182a;--foot-fg:#a3c0d1;--foot-ink:#eef6fa;
+  --font-display:'Archivo',sans-serif;--font-body:'DM Sans',sans-serif;--display-weight:900;--display-track:-.04em;--dlg-muted:#a3c0d1}
+body{overflow-x:clip}
+.lg-header .lg-btn,.lg-fab{background:#8fdcef;color:#06283d}
+.lg-logo{font-stretch:125%}
+.lg-about h2,.lg-umami h2,.lg-catalog h2,.lg-how h2,.lg-lab-head h3,.lg-cartera h2{font-stretch:112%;text-transform:uppercase;letter-spacing:-.045em}
+.lg-demo{background:#04182a;color:#7d9bae}
+.lg-chips button[aria-pressed="true"]{background:#8fdcef;color:#06283d;border-color:#8fdcef}
+
+/* Hero: la marca Lugalco ocupa todo */
+.v5-hero{position:relative;overflow:clip;background:#082a44;--muted:#a3c0d1}
+.v5-ticker{background:#8fdcef;color:#06283d;overflow:hidden;white-space:nowrap;font:800 14px/1 'Archivo',sans-serif;font-stretch:112%;letter-spacing:.1em;padding:12px 0}
+.v5-ticker b{background:#FFBF3F;color:#111;padding:3px 9px;border-radius:6px}
+.v5-ticker-in{display:inline-flex;animation:v5m 40s linear infinite}
+@keyframes v5m{to{transform:translateX(-50%)}}
+.v5-body{position:relative;z-index:2;padding:clamp(24px,4vw,56px) clamp(20px,6vw,96px) clamp(120px,14vw,200px)}
+.v5-kicker{display:inline-block;margin:0 0 6px;padding:6px 14px;border:2px solid #8fdcef;border-radius:999px;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#8fdcef}
+.v5-word{display:flex;align-items:center;gap:clamp(8px,1.6vw,24px);margin:0 0 clamp(18px,2.5vw,34px);color:#eef6fa;line-height:.8;animation:v5in .9s cubic-bezier(.2,.8,.2,1) both}
+.v5-word svg{width:clamp(56px,13vw,210px);flex:none;color:#8fdcef}
+.v5-word span{font:900 clamp(64px,19.5vw,330px)/.85 'Archivo',sans-serif;font-stretch:125%;letter-spacing:-.07em;text-transform:lowercase}
+@keyframes v5in{from{opacity:0;transform:translateY(40px)}}
+.v5-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(20px,4vw,60px);align-items:end;max-width:1200px}
+.v5-lead{font-size:clamp(17px,1.6vw,22px);max-width:44ch;margin:0 0 26px;color:#cfe3ee}
+.v5-actions{display:flex;gap:12px;flex-wrap:wrap}
+.v5-btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:14px 30px;border-radius:999px;background:#8fdcef;color:#06283d;font-weight:700;font-size:17px;text-decoration:none;transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+.v5-btn:hover{transform:translateY(-3px)}
+.v5-btn-line{background:transparent;color:#eef6fa;box-shadow:inset 0 0 0 2px #eef6fa}
+.v5-stats{display:grid;grid-template-columns:repeat(3,1fr);margin:0;padding:0;list-style:none;border-top:2px solid #ffffff40}
+.v5-stats li{padding:14px 0 0}
+.v5-stats b{display:block;font:900 clamp(30px,4vw,60px)/1 'Archivo',sans-serif;font-stretch:125%;letter-spacing:-.05em;color:#8fdcef}
+.v5-stats span{font-size:clamp(11px,1vw,14px);font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#a3c0d1}
+/* Umami asoma como protagonista, en amarillo */
+.v5-umami{position:absolute;right:clamp(16px,5vw,80px);top:clamp(70px,9vw,130px);z-index:3;width:clamp(130px,17vw,260px);background:#FFBF3F;border:4px solid #111;border-radius:22px;padding:10px 10px 14px;text-decoration:none;color:#111;transform:rotate(6deg);box-shadow:10px 12px 0 #00000055;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.v5-umami:hover{transform:rotate(0) translateY(-6px)}
+.v5-umami img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;border:3px solid #111}
+.v5-umami b{display:block;margin-top:8px;font:400 clamp(24px,2.6vw,38px)/1 Verdana,sans-serif;letter-spacing:-.07em}
+.v5-umami-tag{position:absolute;top:-14px;left:-14px;background:#111;color:#FFBF3F;font:800 12px 'Archivo',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;transform:rotate(-8deg)}
+/* Olas */
+.v5-waves{position:absolute;left:0;right:0;bottom:0;height:clamp(70px,9vw,130px);z-index:1;pointer-events:none}
+.v5-waves i{position:absolute;left:0;right:0;bottom:0;height:100%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'%3E%3Cpath d='M0 20q15-18 30 0t30 0 30 0 30 0' fill='none' stroke='%238fdcef' stroke-width='3'/%3E%3C/svg%3E") repeat-x 0 100%;background-size:120px 40px;opacity:.5;animation:v5w 14s linear infinite}
+.v5-waves i:nth-child(2){bottom:14px;opacity:.3;animation-duration:22s;animation-direction:reverse}
+.v5-waves i:nth-child(3){bottom:34px;opacity:.18;animation-duration:30s}
+@keyframes v5w{to{background-position-x:-1200px}}
+
+/* Secciones */
+.lg-about{background:#082a44;grid-template-columns:1fr;gap:26px;padding-top:clamp(64px,9vw,130px);padding-bottom:clamp(30px,5vw,60px)}
+.lg-about h2{font-size:clamp(36px,6.4vw,104px);line-height:.94;max-width:17ch}
+.lg-about p{font-size:clamp(18px,1.8vw,25px);max-width:46ch}
+/* Cartera */
+.lg-cartera{background:#d7eef6;color:#082a44;padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px);--muted:#3c5a6e}
+.lg-cartera-head{max-width:900px;margin-bottom:clamp(28px,4vw,56px)}
+.lg-kicker{margin:0 0 14px;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#082a44}
+.lg-cartera h2{margin:0 0 14px;font-size:clamp(34px,5.6vw,92px);line-height:.94}
+.lg-cartera-head>p:last-child{font-size:clamp(17px,1.6vw,22px);color:#3c5a6e;max-width:52ch;margin:0}
+.lg-cartera-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(12px,1.6vw,22px)}
+.lg-tile{all:unset;box-sizing:border-box;cursor:pointer;grid-column:span 2;position:relative;display:flex;flex-direction:column;gap:8px;min-height:230px;padding:22px;border-radius:24px;background:#082a44;color:#eef6fa;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.lg-tile:hover{transform:translateY(-6px);box-shadow:0 18px 0 #082a4425}
+.lg-tile:focus-visible{outline:3px solid #082a44;outline-offset:3px}
+.lg-tile h3{margin:6px 0 0;font:900 clamp(26px,3vw,44px)/1 'Archivo',sans-serif;font-stretch:112%;letter-spacing:-.04em;text-transform:uppercase}
+.lg-tag{align-self:flex-start;font:800 11px 'Archivo',sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px;background:#ffffff22}
+.lg-tile-n{margin:0;font-weight:700;color:#8fdcef}.lg-tile-f{margin:0;font-size:14px;color:#a3c0d1}
+.lg-tile-go{margin-top:auto;font-weight:700;color:#8fdcef}
+.lg-tile.is-umami{grid-column:span 6;grid-row:span 1;cursor:default;background:#FFBF3F;color:#111;border:4px solid #111;flex-direction:row;align-items:center;justify-content:space-between;gap:24px;padding:clamp(22px,3vw,44px);overflow:hidden;box-shadow:10px 12px 0 #082a44}
+.lg-tile.is-umami:hover{transform:none;box-shadow:10px 12px 0 #082a44}
+.lg-tile.is-umami .lg-tag{background:#111;color:#FFBF3F}
+.lg-tile.is-umami h3{font:400 clamp(70px,12vw,200px)/.8 Verdana,sans-serif;letter-spacing:-.08em;text-transform:none;margin:14px 0 14px}
+.lg-tile.is-umami p{margin:0 0 10px;max-width:40ch;font-size:clamp(16px,1.5vw,20px);color:#2b2208}
+.lg-tile.is-umami .lg-tile-n{color:#111;font-weight:800}
+.lg-tile.is-umami .lg-btn{background:#111;color:#FFBF3F;margin-top:10px}
+.lg-tile-copy{flex:1 1 360px}
+.lg-tile-bags{flex:1 1 360px;display:flex;justify-content:center;min-width:0}
+.lg-tile-bags img{width:clamp(110px,16vw,230px);aspect-ratio:4/5;object-fit:cover;border:4px solid #111;border-radius:18px;box-shadow:8px 10px 0 #11111155;transform:rotate(calc((var(--i) - 1) * 7deg)) translateY(calc(var(--i) * 12px - 12px));margin-left:calc(var(--i) * -34px);background:#eee;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.lg-tile-bags img:nth-child(2){z-index:2}
+.lg-tile.is-umami:hover .lg-tile-bags img{transform:rotate(calc((var(--i) - 1) * 11deg)) translateY(calc(var(--i) * 6px - 12px))}
+/* Umami: sección amarilla */
+.lg-umami-head{grid-template-columns:1fr;gap:16px}
+.lg-umami-head .lg-umami-word{color:#111;font-size:clamp(110px,24vw,380px);line-height:.8;letter-spacing:-.08em;margin:0 0 4px}
+.lg-umami-head>div{max-width:60ch}.lg-umami-head h2{font-size:clamp(28px,4vw,56px)}
+.lg-umami .lg-btn{background:#111;color:#FFBF3F}
+.lg-lab-stage{border:3px solid #111;background:#fff6df}
+.lg-lab-bar,.lg-lab-bar small{color:#111}
+.lg-lab-list button{border-color:#11111155}
+.lg-lab-list button[aria-pressed="true"],.lg-lab-bar .lg-chips button[aria-pressed="true"]{background:#111;color:#FFBF3F;border-color:#111}
+.lg-lab-bar .lg-btn{background:#111;color:#FFBF3F}
+.lg-lab-bar .lg-chips button{color:#111;border-color:#11111155}
+.lg-lab-head p{color:#2b2208}
+.lg-lab-view{background:#efe9e0}
+@media(min-width:861px){.lg-lab-view img{object-fit:contain;background:#efe9e0}}
+/* Catálogo y pedir */
+.lg-card{border-radius:20px;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s}
+.lg-card:hover{transform:translateY(-6px);border-color:#8fdcef;box-shadow:0 14px 0 #8fdcef33}
+.lg-card.is-umami{border-color:#FFBF3F}.lg-card.is-umami .lg-card-brand{color:#FFBF3F}
+.lg-card-q[aria-pressed="true"]{background:#8fdcef;color:#06283d;border-color:#8fdcef}
+.lg-how h2{font-size:clamp(34px,5.6vw,88px);line-height:.94}.lg-how li::before{font-size:clamp(54px,7vw,104px);font-stretch:125%}
+.lg-how .lg-btn{background:#082a44;color:#8fdcef}
+.lg-footer-logo{font-stretch:125%}
+.cl-bar{background:#8fdcef;color:#06283d}.cl-bar .lg-btn{background:#082a44;color:#8fdcef}
+.lg-dialog{border:2px solid #8fdcef;background:#0b3352}
+.cl-steps li[aria-current]{background:#8fdcef;color:#06283d;border-color:#8fdcef}
+.cl-tabs button[aria-selected="true"]{border-bottom-color:#8fdcef}
+.cl-add[aria-pressed="true"]{background:#8fdcef;color:#06283d;border-color:#8fdcef}
+.cl-row.is-in{background:linear-gradient(90deg,#8fdcef22,transparent 70%)}
+.cl-login h1,.cl-done h1,.pn-head h1{text-transform:uppercase;font-stretch:112%;letter-spacing:-.045em}
+.cl-badge.answered,.cl-badge.order{background:#8fdcef;color:#06283d}
+.cl-track li.is-done::before,.cl-track li[aria-current]::before{background:#8fdcef}
+.pn-list button[aria-current="true"]{background:#8fdcef22;box-shadow:inset 3px 0 #8fdcef}
+.pn-detail .lg-btn{background:#8fdcef;color:#06283d}
+.lg-btn-ghost{box-shadow:inset 0 0 0 2px currentColor}
+
+.rv{opacity:0;transform:translateY(34px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*70ms)}
+.rv.rv-in{opacity:1;transform:none}
+.lg-card.rv.rv-in:hover,.lg-tile.rv.rv-in:hover{transform:translateY(-6px)}
+.lg-tile.is-umami.rv.rv-in:hover{transform:none}
+
+@media(max-width:860px){
+  .v5-row{grid-template-columns:1fr}
+  .v5-umami{position:relative;top:auto;right:auto;margin:28px 0 0 auto;transform:rotate(4deg)}
+  .v5-body{padding-bottom:110px}
+  .lg-tile{grid-column:span 3}
+  .lg-tile.is-umami{flex-direction:column;align-items:flex-start}
+  .lg-tile-bags{justify-content:flex-start;padding-left:34px}
+}
+@media(max-width:560px){
+  .lg-tile{grid-column:span 6;min-height:0}
+  .v5-actions .v5-btn{flex:1 1 100%}
+  .v5-stats span{font-size:10.5px;display:block;line-height:1.25}
+  .lg-tile.is-umami h3{font-size:34vw}
+}
+@media(prefers-reduced-motion:reduce){.v5-ticker-in,.v5-waves i{animation:none}.rv{opacity:1;transform:none}}
+.v5-word svg{width:clamp(50px,9.5vw,150px)}
+.v5-word span{font-size:clamp(56px,13.2vw,230px)}
+.v5-row{grid-template-columns:1fr;max-width:min(58vw,820px)}
+.v5-umami{top:auto;bottom:clamp(90px,10vw,150px);right:clamp(16px,6vw,96px);width:clamp(130px,15vw,230px)}
+@media(max-width:860px){
+  .v5-row{max-width:none}
+  .v5-umami{position:relative;bottom:auto;right:auto;margin:28px 0 0 auto;width:min(46vw,220px)}
+}
+@media(min-width:861px){.lg-tile[data-brand-filter="Doux"],.lg-tile[data-brand-filter="Caterfrits"]{grid-column:span 3}}
+@media(max-width:860px){
+  .v5-umami{margin-top:56px}
+  .v5-word svg{width:clamp(44px,12vw,100px)}
+  .v5-word span{font-size:clamp(56px,19vw,150px)}
+}
+@media(max-width:860px){
+  .v5-word svg{width:clamp(38px,10vw,90px)}
+  .v5-word span{font-size:clamp(50px,15.5vw,140px)}
+  .v5-stats{margin-bottom:0}
+  .v5-umami{margin-top:72px!important}
+}
+@media(max-width:860px){.v5-umami-tag{top:18px;left:18px}.v5-umami{margin-top:40px!important}}
+.v5-umami{display:block}
+@media(max-width:860px){.v5-umami{width:min(60vw,240px);margin-top:44px!important;margin-bottom:8px}}
