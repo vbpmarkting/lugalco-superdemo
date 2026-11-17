@@ -1,0 +1,46 @@
+/* Versión 6 · Lugalco+: la v5 con wordmark animado que se funde con el header, cartera a color y Umami como escena de scroll */
+@import url('v5.css');
+:root{--p:0;--sp:0}
+
+/* 1 · Hero: letras que suben, olas que fluyen por dentro y wordmark que se encoge al bajar */
+.v5-word{animation:none;transform-origin:0 0;transform:translateY(calc(var(--p) * -30px)) scale(calc(1 - var(--p) * .4));opacity:calc(1 - var(--p) * 1.1);will-change:transform,opacity}
+.v5-word svg path{stroke-dasharray:1;stroke-dashoffset:1;animation:v6draw 1.4s .15s cubic-bezier(.2,.8,.2,1) forwards,v6bob 5s 1.6s ease-in-out infinite alternate}
+.v5-word svg path:nth-child(2){animation-delay:.3s,1.8s}.v5-word svg path:nth-child(3){animation-delay:.45s,2s}
+@keyframes v6draw{to{stroke-dashoffset:0}}
+@keyframes v6bob{to{transform:translateY(1.4px)}}
+.v6-text{display:flex}
+.v6-l{display:inline-block;font-style:normal;padding:0 .09em;margin:0 -.09em;color:transparent;-webkit-background-clip:text;background-clip:text;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='60' viewBox='0 0 160 60'%3E%3Cpath d='M0 30q20-24 40 0t40 0 40 0 40 0' fill='none' stroke='%238fdcef' stroke-width='7'/%3E%3C/svg%3E"),linear-gradient(#eef6fa,#eef6fa);
+  background-size:160px 60px,100% 100%;background-repeat:repeat,no-repeat;
+  clip-path:inset(0 0 105% 0);animation:v6up .9s calc(.25s + var(--k) * 90ms) cubic-bezier(.2,.8,.2,1) forwards,v6flow 6s linear infinite;transform:translateY(.25em)}
+@keyframes v6up{to{clip-path:inset(-10% -10% -10% -10%);transform:none}}
+@keyframes v6flow{to{background-position:160px 0,0 0}}
+body:not(.cl) .lg-logo{opacity:var(--p);transform:translateX(calc((1 - var(--p)) * -10px));transition:none}
+@media(prefers-reduced-motion:reduce){.v6-l{clip-path:none;transform:none;animation:none}.v5-word svg path{stroke-dashoffset:0;animation:none}.v5-word{transform:none;opacity:1}body:not(.cl) .lg-logo{opacity:1;transform:none}}
+
+/* 2 · Cartera: cada marca con su color y, al pasar el ratón, tres de sus productos */
+.lg-cartera-grid .lg-tile:not(.is-umami){background:var(--bc,#082a44);color:#082a44;overflow:hidden}
+.lg-cartera-grid .lg-tile:not(.is-umami) .lg-tag{background:#082a4426;color:#082a44}
+.lg-cartera-grid .lg-tile:not(.is-umami) .lg-tile-n,.lg-cartera-grid .lg-tile:not(.is-umami) .lg-tile-go{color:#082a44}
+.lg-cartera-grid .lg-tile:not(.is-umami) .lg-tile-f{color:#082a44b8}
+.lg-cartera-grid .lg-tile:not(.is-umami) h3{font-size:clamp(30px,3.4vw,52px)}
+.lg-tile:hover{box-shadow:0 18px 0 #082a4433}
+.lg-tile-peek{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:6px}
+.lg-tile-peek li{display:flex;justify-content:space-between;gap:12px;align-items:baseline;background:#ffffff8c;border-radius:12px;padding:6px 12px;font-size:13px;line-height:1.25}
+.lg-tile-peek b{font-weight:700;text-transform:capitalize}.lg-tile-peek span{opacity:.7;white-space:nowrap}
+@media(hover:hover) and (min-width:861px){
+  .lg-tile-peek{position:absolute;left:14px;right:14px;top:128px;margin:0;opacity:0;transform:translateY(24px);transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+  .lg-tile:hover .lg-tile-peek,.lg-tile:focus-visible .lg-tile-peek{opacity:1;transform:none}
+  .lg-tile:not(.is-umami){min-height:290px}.lg-tile:not(.is-umami) .lg-tile-n,.lg-tile:not(.is-umami) .lg-tile-f{transition:opacity .25s}.lg-tile:hover .lg-tile-n,.lg-tile:hover .lg-tile-f{opacity:0}
+}
+
+/* 3 · Umami: la sección se abre como un círculo amarillo y los envases entran volando */
+.lg-umami{position:relative;background:#d7eef6;isolation:isolate;overflow-x:clip}
+.lg-umami::before{content:"";position:absolute;inset:0;z-index:-1;background:#FFBF3F;clip-path:circle(calc(var(--sp) * 70vw + clamp(0, (var(--sp) - .75) * 4, 1) * 500vh) at 50% 0%)}
+.lg-umami-head .lg-umami-word{transform:translateX(calc((1 - var(--sp)) * -18vw));opacity:calc(var(--sp) * 1.6)}
+.v6-fly{display:flex;justify-content:center;padding:clamp(24px,4vw,56px) 0 0}
+.v6-fly img{--k:clamp(0, calc(var(--sp) * 1.9 - var(--i) * .16), 1);width:clamp(96px,17vw,250px);aspect-ratio:4/5;object-fit:cover;border:4px solid #111;border-radius:18px;background:#efe9e0;margin-left:clamp(-34px,-3vw,-12px);box-shadow:8px 10px 0 #11111155;
+  opacity:var(--k);transform:translate(calc((1 - var(--k)) * (var(--i) - 2) * 18vw),calc((1 - var(--k)) * 40vh)) rotate(calc((var(--i) - 2) * 6deg + (1 - var(--k)) * (var(--i) - 2) * 40deg))}
+.v6-fly img:first-child{margin-left:0}.v6-fly img:nth-child(3){z-index:2;transform:translate(0,calc((1 - var(--k)) * 40vh)) rotate(calc((1 - var(--k)) * 30deg)) scale(1.08)}
+@media(max-width:560px){.v6-fly img:nth-child(n+4){display:none}.v6-fly img{width:30vw}}
+@media(prefers-reduced-motion:reduce){.lg-umami::before{clip-path:none}.lg-umami-head .lg-umami-word{transform:none;opacity:1}.v6-fly img{opacity:1;transform:none}}

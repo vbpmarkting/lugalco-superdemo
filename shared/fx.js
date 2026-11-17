@@ -1,6 +1,6 @@
 // Efectos de movimiento (solo se activan en la versión 4 y respetan "reducir movimiento")
 (() => {
-  if (!['4', '5'].includes(document.documentElement.dataset.ver)) return;
+  if (!['4', '5', '6'].includes(document.documentElement.dataset.ver)) return;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   // Abanico de envases: se mueve con el ratón o el dedo
   const fan = document.getElementById('v4-fan');
@@ -31,6 +31,21 @@
   };
   new MutationObserver(tag).observe(document.getElementById('lg-sections'), { childList: true, subtree: true });
   tag();
+
+  // Versión 6: el wordmark se encoge hacia el header y Umami entra como escena de scroll
+  if (document.documentElement.dataset.ver === '6' && !reduce) {
+    const root = document.documentElement; let tick = false;
+    const clamp = v => Math.max(0, Math.min(1, v));
+    const update = () => {
+      tick = false;
+      const w = document.querySelector('.v5-word');
+      if (w) { const h = w.offsetHeight + w.offsetTop + 80; root.style.setProperty('--p', clamp(scrollY / h).toFixed(3)); }
+      const u = document.querySelector('.lg-umami');
+      if (u) { const r = u.getBoundingClientRect(), vh = innerHeight; root.style.setProperty('--sp', clamp((vh - r.top) / (vh * .9)).toFixed(3)); u.style.setProperty('--sp', clamp((vh - r.top) / (vh * .9)).toFixed(3)); }
+    };
+    addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', update); new MutationObserver(update).observe(document.getElementById('lg-sections'), { childList: true }); update();
+  }
   // Números que cuentan
   const count = ul => {
     ul.querySelectorAll('b').forEach(b => {
@@ -39,6 +54,6 @@
       requestAnimationFrame(step);
     });
   };
-  const stats = document.querySelector('.v4-stats,.v5-stats');
+  const stats = document.querySelector('.v4-stats,.v5-stats,.v6-stats');
   if (stats && io) { const so = new IntersectionObserver(es => { if (es[0].isIntersecting) { count(stats); so.disconnect(); } }, { threshold: .5 }); so.observe(stats); }
 })();

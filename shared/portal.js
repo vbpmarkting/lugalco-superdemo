@@ -45,16 +45,19 @@
   }
   function renderLab() { const el = root.querySelector('#lg-lab-stage'); if (el) el.innerHTML = labStage(); root.querySelectorAll('[data-lab]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lab === state.lab))); }
 
-  const v5 = LG.ver === '5';
+  const v5 = ['5', '6'].includes(LG.ver), v6 = LG.ver === '6';
   const cnt = b => products.filter(x => x.brand === b).length;
   const topFams = b => { const c = {}; products.filter(x => x.brand === b).forEach(x => { c[x.category] = (c[x.category] || 0) + 1; }); return Object.entries(c).sort((a, b2) => b2[1] - a[1]).slice(0, 3).map(([k]) => t('fam')[k]); };
+  const BC = { Friusa: '#5fd6c2', Eurofrits: '#ff9b73', Gelagri: '#a5e06d', Doux: '#ff8fae', Caterfrits: '#a9b4ff' };
+  const peek = b => `<ul class="lg-tile-peek" aria-hidden="true">${products.filter(x => x.brand === b).slice(0, 3).map(x => `<li><b>${esc(x.name)}</b><span>${esc(x.format)}</span></li>`).join('')}</ul>`;
+  const flyPicks = () => { const pref = ['umami-gamba-pelada', 'umami-patata-99', 'umami-hamburguesa', 'umami-pollo-empanado', 'umami-patata-77'].map(id => products.find(x => x.id === id)).filter(Boolean); umami.forEach(x => { if (pref.length < 5 && !pref.includes(x)) pref.push(x); }); return pref.slice(0, 5); };
   function cartera() {
     const pick = ['umami-gamba-pelada', 'umami-patata-99', 'umami-hamburguesa'].map(id => products.find(x => x.id === id)).filter(Boolean);
     return `<section class="lg-cartera" id="cartera"><div class="lg-cartera-head"><p class="lg-kicker">${esc(t('cartKicker'))}</p><h2>${esc(t('cartTitle'))}</h2><p>${esc(t('cartLead'))}</p></div>
       <div class="lg-cartera-grid">
         <article class="lg-tile is-umami"><div class="lg-tile-copy"><span class="lg-tag">${esc(t('cartOwn'))}</span><h3>umami</h3><p>${esc(t('cartUmamiText'))}</p><p class="lg-tile-n">${esc(t('refs')(cnt('Umami')))}</p><a class="lg-btn" href="#lab">${esc(t('cartUmamiCta'))}</a></div>
           <div class="lg-tile-bags" aria-hidden="true">${pick.map((x, i) => `<img src="${esc(image(x))}" alt="" loading="lazy" style="--i:${i}">`).join('')}</div></article>
-        ${brands.map(b => `<button type="button" class="lg-tile" data-brand-filter="${b}"><span class="lg-tag">${esc(t('cartPartner'))}</span><h3>${b}</h3><p class="lg-tile-n">${esc(t('refs')(cnt(b)))}</p><p class="lg-tile-f">${esc(topFams(b).join(' · '))}</p><span class="lg-tile-go">${esc(t('cartSee'))} →</span></button>`).join('')}
+        ${brands.map(b => `<button type="button" class="lg-tile" data-brand-filter="${b}" style="--bc:${BC[b]}"><span class="lg-tag">${esc(t('cartPartner'))}</span><h3>${b}</h3><p class="lg-tile-n">${esc(t('refs')(cnt(b)))}</p><p class="lg-tile-f">${esc(topFams(b).join(' · '))}</p>${v6 ? peek(b) : ''}<span class="lg-tile-go">${esc(t('cartSee'))} →</span></button>`).join('')}
       </div></section>`;
   }
   function render() {
@@ -65,6 +68,7 @@
     <section class="lg-umami" id="umami">
       <div class="lg-umami-head"><p class="lg-umami-word" aria-hidden="true">umami</p>
         <div><h2>${esc(t('umamiTitle'))}</h2><p>${esc(t('umamiText'))}</p><a class="lg-btn" href="#lab">${esc(t('labTitle'))}</a></div></div>
+      ${v6 ? `<div class="v6-fly" aria-hidden="true">${flyPicks().map((x, i) => `<img src="${esc(image(x))}" alt="" loading="lazy" style="--i:${i}">`).join('')}</div>` : ''}
       <div class="lg-lab" id="lab"><div class="lg-lab-head"><h3>${esc(t('labTitle'))}</h3><p>${esc(t('labLead'))}</p></div>
         <div class="lg-lab-grid">
           <ul class="lg-lab-list" aria-label="${esc(t('labPick'))}">${umami.map(p => `<li><button type="button" data-lab="${esc(p.id)}" aria-pressed="${p.id === state.lab}"><img src="${esc(image(p))}" alt="" width="44" height="56" loading="lazy"><span>${esc(p.name)}</span></button></li>`).join('')}</ul>

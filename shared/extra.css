@@ -132,3 +132,4 @@ body.cl .lg-fab{display:none}
 .lg-lab-view img{padding:0;object-fit:cover}@media (max-width:860px){.lg-lab-view{height:auto;aspect-ratio:1}}
 body.cl .ver-switch .n{display:none}
 @media (max-width:560px){body.cl .ver-switch{display:none}}
+@media (max-width:640px){.ver-switch .n{display:none}.ver-switch a{padding:8px 13px}}
