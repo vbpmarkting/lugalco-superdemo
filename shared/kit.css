@@ -1,0 +1,13 @@
+/* Tarjeta de producto y utilidades de las versiones 8, 9 y 10 (se tiñen con los tokens de cada versión) */
+.k-card{background:var(--card-bg,var(--surface));border:2px solid var(--line);border-radius:var(--radius,18px);overflow:hidden;display:flex;flex-direction:column;position:relative;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.k-card:hover{transform:translateY(-4px)}
+.k-card.is-umami{border-color:#FFBF3F}
+.k-card-open{all:unset;display:flex;flex-direction:column;cursor:pointer;flex:1;color:inherit}
+.k-card-open:focus-visible{outline:3px solid var(--focus,#FFBF3F);outline-offset:-3px}
+.k-card-media{aspect-ratio:1;background:var(--media,#ddd);display:grid;place-items:center;overflow:hidden}.k-card-media img{width:100%;height:100%;object-fit:cover}
+.k-card-mark{font:800 52px var(--font-display);color:var(--bc);opacity:.85}
+.k-card-body{display:grid;gap:3px;padding:12px 14px}.k-card-brand{font:800 10px sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--bc)}.k-card-body b{font-size:14px;line-height:1.2;text-transform:uppercase}.k-card-body small{color:var(--muted)}
+.k-card-q{margin:0 12px 12px;min-height:42px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:inherit;cursor:pointer;font:600 13px var(--font-body)}
+.k-card-q[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.lg-count{color:var(--muted);font-size:14px}.lg-empty{grid-column:1/-1;color:var(--muted)}.lg-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.k-card-media:has(.k-card-mark){aspect-ratio:16/8;background:color-mix(in srgb,var(--bc) 22%,var(--media,#ddd))}

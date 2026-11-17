@@ -133,3 +133,4 @@ body.cl .lg-fab{display:none}
 body.cl .ver-switch .n{display:none}
 @media (max-width:560px){body.cl .ver-switch{display:none}}
 @media (max-width:640px){.ver-switch .n{display:none}.ver-switch a{padding:8px 13px}}
+.ver-switch .n{display:none}.ver-switch a[aria-current] .n{display:inline}
