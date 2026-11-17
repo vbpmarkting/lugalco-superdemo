@@ -1,0 +1,28 @@
+{
+  "requestId": "32c2d0c4-54d4-4f9a-9060-61fba155f33b",
+  "modelId": "heygen-video-1",
+  "duration": 5,
+  "resolution": "480p",
+  "aspectRatio": "3:4",
+  "contentReferenceImages": [
+    "https://images.meigen.ai/reference-pack-sources/mcp/4b723adb7471cb0c48f498edc556f8bbd23495993c15b26a6f8fac8c0cd558d7.webp",
+    "https://images.meigen.ai/reference-pack-sources/mcp/e65c09e807e24fddcf2087885f8b40bddd7d63ac742e45dc329432e4209f2020.webp"
+  ],
+  "prompt": "One continuous 5-second photorealistic studio product video, of ONE exact physical frozen peas bag. [image1] is the exact FRONT design. [image2] is the exact BACK of that SAME bag, not a second bag. Preserve both reference faces faithfully, their typography, soft flexible plastic crinkles, pillow-bag shape, heat sealed seams, full bag framing, soft shadow and cream studio background. FRONT ONLY: yellow upper header with black lowercase 'umami'; black body and bottom seam; white 'GUISANTES'; clear window showing frozen peas. BACK: the WHOLE face including top, bottom and all seals is BLACK with white product information exactly as [image2]. Absolutely NO yellow header, NO transparent window, NO peas visible through the rear. Side seam predominantly black. A fixed tripod camera, no cuts, no zoom, no people or props. Action: start front-facing; turn the bag smoothly halfway around to clearly reveal its all-black text-covered BACK in the middle of the clip; continue back to the FRONT; then gently separate only the very top sealed lips to show a small glimpse of the peas inside. Keep the front header panel and its printed 'umami' wordmark flat and undistorted during opening: the opening occurs ABOVE the logo, at the narrow top seam, not by collapsing the printed panel. The last moment shows the same front design with a modest open mouth at its top and intact legible lettering. Prioritize correct back identity and stable accurate logos over elaborate opening. No redesign, no duplicate bag, no rigid jar or hinged lid, no flying food, no rendered or cartoon appearance. The result should look like real filmed product photography of the supplied bag.",
+  "responseVersion": 3,
+  "success": true,
+  "generationId": "1a6a3bbd-e93e-4812-bf5d-dfb25e64d667",
+  "status": "completed",
+  "mediaType": "video",
+  "creditsUsed": 10,
+  "creditsStatus": "confirmed",
+  "urls": [
+    "https://images.meigen.ai/generations/2026-11/1a6a3bbd-e93e-4812-bf5d-dfb25e64d667.mp4"
+  ],
+  "deduped": true,
+  "nextAction": "use_result",
+  "originalUrl": "https://images.meigen.ai/generations/2026-11/1a6a3bbd-e93e-4812-bf5d-dfb25e64d667.mp4",
+  "webAsset": "assets/productos-demo/umami-guisantes-animacion-trasera-negra-web.mp4",
+  "reviewStatus": "Revisado y usado en la demo",
+  "review": "Trasera completa negra con texto blanco visible; frontal conservado; apertura pequeña en sello superior, logo más estable que en primera prueba. Propuesta conceptual, etiquetas pendientes de validar."
+}

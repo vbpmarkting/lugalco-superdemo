@@ -1,0 +1,21 @@
+{
+  "requestId": "2a990b71-aaaa-463b-8e90-0d5de285b202",
+  "modelId": "heygen-video-1",
+  "duration": 5,
+  "resolution": "480p",
+  "aspectRatio": "3:4",
+  "firstFrame": "https://images.meigen.ai/reference-pack-sources/mcp/4b723adb7471cb0c48f498edc556f8bbd23495993c15b26a6f8fac8c0cd558d7.webp",
+  "contentReferenceImages": [],
+  "prompt": "Animate the supplied first-frame photograph into a 5-second photorealistic studio product shot. This EXACT same single Umami frozen-peas flexible pillow bag must keep its identity, silhouette, printed lowercase black 'umami' logo, white 'GUISANTES' lettering, yellow TOP HEADER ONLY, black body and black bottom seal, transparent product window, real frozen peas, wrinkles, realistic plastic reflections and warm off-white studio background. The package must look like an actual photographed physical bag throughout, never a cartoon, synthetic 3D render, glossy rigid container or simplified illustration. Fixed camera, full bag in frame, no cuts, no zoom. Timeline: 0-2.6 seconds the bag turns smoothly about its vertical axis by approximately 35 degrees to reveal its real side volume and returns nearly front-facing. 2.6-5 seconds the top heat-sealed edge gently parts along its seam and the front and back lips peel apart naturally, forming a modest opening through which the same real green peas are visible. A slight natural camera elevation at the end may reveal the interior while retaining full bag framing. Opening should be a flexible film seam opening, not a hinged lid, jar, zipper or rigid tube. Preserve the legibility and spelling of both printed words during all motion. No people, hands, tools, spilled or flying peas, extra bags, added graphics, narration, music or camera transitions. Premium photographic realism, restrained physical motion, source-photo fidelity is the top priority.",
+  "responseVersion": 3,
+  "generationId": "5839ff8f-d7ab-4990-ade4-b225e3553dde",
+  "status": "completed",
+  "creditsUsed": 10,
+  "creditsStatus": "confirmed",
+  "originalUrl": "https://images.meigen.ai/generations/2026-11/5839ff8f-d7ab-4990-ade4-b225e3553dde.mp4",
+  "asset": "assets/productos-demo/umami-guisantes-animacion-prueba.mp4",
+  "description": "Prueba autorizada: 5 segundos, 480p, animación a partir de la imagen de guisantes. Revisar fidelidad antes de usar comercialmente.",
+  "webAsset": "assets/productos-demo/umami-guisantes-animacion-web.mp4",
+  "webProcessing": "Recorte a 5 segundos, sin audio, H.264 intra y faststart para acceso a fotogramas; sin nueva generación.",
+  "review": "Movimiento fotográfico y apertura presentes. El logo se deforma parcialmente al abrir. Prueba de concepto, no vídeo final."
+}

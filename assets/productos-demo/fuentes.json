@@ -1,0 +1,174 @@
+{
+  "umami-patata-99": {
+    "photo": "assets/productos-demo/patata-99.png",
+    "photoIllustrative": true,
+    "photoSource": "https://www.ecofrost.be/es/productos/french-fries/99",
+    "photoOwner": "Ecofrost",
+    "sourceImage": "https://ecofrost.s3-eu-west-1.amazonaws.com/products/images/NVgYj4KT9sv5j283STFPXUTBOb5dFs5mmG88ZycS.png",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02"
+  },
+  "umami-patata-77": {
+    "photo": "assets/productos-demo/patata-77.png",
+    "photoIllustrative": true,
+    "photoSource": "https://www.ecofrost.be/es/productos/french-fries/77",
+    "photoOwner": "Ecofrost",
+    "sourceImage": "https://ecofrost.s3-eu-west-1.amazonaws.com/products/images/g3ghLHrYSX7wzAjVQfVby7WChJ7VFSro4l7dSM7i.png",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02"
+  },
+  "umami-guisante-comun": {
+    "photo": "assets/productos-demo/guisante-comun.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://barandica.es/guisante-25-kg/",
+    "photoOwner": "Barandica",
+    "sourceImage": "https://barandica.es/wp-content/uploads/2022/07/140-_R6A0498-scaled-600x800.jpg",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02",
+    "mockup": "assets/productos-demo/umami-envase-guisantes-v2.webp",
+    "mockupCaption": "Propuesta de envase generada para la demo; diseño y embalaje sin validar."
+  },
+  "umami-guisante-fino": {
+    "photo": "assets/productos-demo/guisante-fino.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://barandica.es/guisante-25-kg/",
+    "photoOwner": "Barandica",
+    "sourceImage": "https://barandica.es/wp-content/uploads/2022/07/140-_R6A0498-scaled-600x800.jpg",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02",
+    "mockup": "assets/productos-demo/umami-envase-guisantes-v2.webp",
+    "mockupCaption": "Propuesta de envase generada para la demo; diseño y embalaje sin validar."
+  },
+  "umami-ensaladilla": {
+    "photo": "assets/productos-demo/ensaladilla.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://barandica.es/ensaladilla-25-kg/",
+    "photoOwner": "Barandica",
+    "sourceImage": "https://barandica.es/wp-content/uploads/2022/07/IMG_20200511_101132-scaled-600x800.jpg",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02",
+    "mockup": "assets/productos-demo/umami-envase-ensaladilla-v2.webp",
+    "mockupCaption": "Propuesta de envase generada para la demo; diseño y embalaje sin validar."
+  },
+  "umami-grelo": {
+    "photo": "assets/productos-demo/grelo.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://tienda.pereira.es/productos/1778/grelos",
+    "photoOwner": "Pereira",
+    "sourceImage": "https://tienda.pereira.es/files/fotos_web/1778.jpg",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02"
+  },
+  "umami-brocoli": {
+    "photo": "assets/productos-demo/brocoli.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://barandica.es/coliflor-congelada-25-kg/",
+    "photoOwner": "Barandica",
+    "sourceImage": "https://barandica.es/wp-content/uploads/2022/07/139-_R6A0490-scaled-600x900.jpg",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02",
+    "mockup": "assets/productos-demo/umami-envase-brocoli-v2.webp",
+    "mockupCaption": "Propuesta de envase generada para la demo; diseño y embalaje sin validar."
+  },
+  "umami-menestra-comun": {
+    "photo": "assets/productos-demo/menestra-comun.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://barandica.es/menestra-especial-25-kg/",
+    "photoOwner": "Barandica",
+    "sourceImage": "https://barandica.es/wp-content/uploads/2022/07/138-_R6A0485-scaled-600x800.jpg",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02",
+    "mockup": "assets/productos-demo/umami-envase-menestra-v2.webp",
+    "mockupCaption": "Propuesta de envase generada para la demo; diseño y embalaje sin validar."
+  },
+  "umami-menestra-especial": {
+    "photo": "assets/productos-demo/menestra-especial.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://barandica.es/menestra-especial-25-kg/",
+    "photoOwner": "Barandica",
+    "sourceImage": "https://barandica.es/wp-content/uploads/2022/07/138-_R6A0485-scaled-600x800.jpg",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02",
+    "mockup": "assets/productos-demo/umami-envase-menestra-v2.webp",
+    "mockupCaption": "Propuesta de envase generada para la demo; diseño y embalaje sin validar."
+  },
+  "umami-hamburguesa": {
+    "photo": "assets/productos-demo/hamburguesa.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://macasa.net/producto/hamburguesa-de-ternera-100-g-congelada-mafoods/",
+    "photoOwner": "Macasa",
+    "sourceImage": "https://macasa.net/wp-content/uploads/2021/12/26112021-P1000727-min.jpg",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02"
+  },
+  "umami-pollo-empanado": {
+    "photo": "assets/productos-demo/pollo-empanado.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://grupojucarne.es/familias/empanados/",
+    "photoOwner": "Grupo Jucarne",
+    "sourceImage": "https://grupojucarne.es/wp-content/uploads/2024/04/07-PECHUGA-DE-POLLO-congelada-1024x655.jpg",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02"
+  },
+  "umami-san-jacobo": {
+    "photo": "assets/productos-demo/san-jacobo.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://fajardolapuerta.com/catalogo/san-jacobos/",
+    "photoOwner": "Fajardo",
+    "sourceImage": "https://fajardolapuerta.com/wp-content/uploads/2026/07/xsan-jacobos.jpg.pagespeed.ic.xPM3pxEA6L.jpg",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02"
+  },
+  "umami-migas-bacalao": {
+    "photo": "assets/productos-demo/migas-bacalao.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://www.bofrost.es/es/migas-de-bacalao-ES8468.html",
+    "photoOwner": "Bofrost",
+    "sourceImage": "https://www.bofrost.es/dw/image/v2/BGLH_PRD/on/demandware.static/-/Sites-ES-master-catalog/default/dw57c727a0/images/8468-migas-de-bacalao.jpg?sw=845&sh=500",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02"
+  },
+  "umami-lomos-bacalao": {
+    "photo": "assets/productos-demo/lomos-bacalao.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://tienda.pereira.es/productos/1034/bacalao-lomos",
+    "photoOwner": "Pereira",
+    "sourceImage": "https://tienda.pereira.es/files/fotos_web/1034.jpg",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02"
+  },
+  "umami-gamba-pelada": {
+    "photo": "assets/productos-demo/gamba-pelada.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://froxa.com/producto/gamba-pelada/",
+    "photoOwner": "Froxá",
+    "sourceImage": "https://froxa.com/wp-content/uploads/2024/02/foto-datos.jpg",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02"
+  },
+  "umami-coliflor": {
+    "photo": "assets/productos-demo/coliflor.jpg",
+    "photoIllustrative": true,
+    "photoSource": "https://www.congeladosnavarra.com/es/productos/gama-de-productos/verduras-y-legumbres/coliflor",
+    "photoOwner": "Congelados de Navarra",
+    "sourceImage": "https://www.congeladosnavarra.com/sites/default/files/producto_principal/coliflor.jpg",
+    "photoCaption": "Imagen ilustrativa de un producto similar. No corresponde al producto definitivo de Umami.",
+    "rightsStatus": "Referencia visual para demo privada. Derechos no verificados para publicación comercial.",
+    "consultedAt": "2026-11-02"
+  }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es" data-ver="4">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lugalco · Versión 4 Pop</title>
+<meta name="description" content="Superdemo de Lugalco: catálogo, Umami Lab, fichas, área cliente y panel.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="shared/base.css"><link rel="stylesheet" href="shared/client.css"><link rel="stylesheet" href="shared/extra.css"><link rel="stylesheet" href="skins/v4.css">
+</head>
+<body>
+<p class="lg-demo" data-t="demo">Demo: datos, tarifas y envases provisionales</p>
+<header class="lg-header">
+  <a href="#" class="lg-logo" data-home aria-label="Lugalco, inicio"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 13c6-7 11 7 17 0s11 7 16 0M4 21c6-7 11 7 17 0s11 7 16 0M4 29c6-7 11 7 17 0s11 7 16 0" stroke="currentColor" stroke-width="2.5"/></svg> lugalco</a>
+  <nav class="lg-nav" aria-label="Principal"><a href="#lugalco" data-t="navLugalco">Lugalco</a><a href="#lab" data-t="navLab">Umami Lab</a><a href="#productos" data-t="navProducts">Productos</a><a href="#como-pedir" data-t="navHow">Cómo pedir</a></nav>
+  <div class="lg-langs" role="group" aria-label="Idioma"><button type="button" data-lang="es">ES</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+  <a class="lg-btn" data-client href="cliente.html" data-t="clientArea">Área cliente</a>
+</header>
+<main>
+<section class="v4-hero" aria-label="Lugalco">
+  <div class="v4-ticker" aria-hidden="true"><div class="v4-ticker-in"><span>CONGELADO EN ORIGEN ✺ DESDE VIGO ✺ ESPAÑA Y PORTUGAL ✺ UMAMI ✺ 128 REFERENCIAS ✺ </span><span>CONGELADO EN ORIGEN ✺ DESDE VIGO ✺ ESPAÑA Y PORTUGAL ✺ UMAMI ✺ 128 REFERENCIAS ✺ </span></div></div>
+  <div class="v4-grid">
+    <div class="v4-copy"><p class="v4-kicker" data-t="heroKicker">Lugalco · Vigo</p>
+      <h1 data-t="marTitle">Todo bajo
+cero.</h1>
+      <p class="v4-lead" data-t="heroLead"></p>
+      <div class="v4-actions"><a class="v4-btn" href="#lab" data-t="labTitle">Umami Lab</a><a class="v4-btn v4-btn-line" data-client href="cliente.html" data-t="askQuote">Pedir cotización</a></div></div>
+    <div class="v4-fan" id="v4-fan">
+      <figure class="v4-card c1" style="--r:-11deg;--d:14"><img src="assets/productos-demo/serie-umami/frontal-gamba-pelada.webp" alt="Umami Gamba pelada"></figure>
+      <figure class="v4-card c2" style="--r:6deg;--d:22"><img src="assets/productos-demo/serie-umami/frontal-menestra-comun.webp" alt="Umami Menestra común"></figure>
+      <figure class="v4-card c3" style="--r:-3deg;--d:34"><img src="assets/productos-demo/serie-umami/frontal-patata-99.webp" alt="Umami Patata 9/9"></figure>
+      <figure class="v4-card c4" style="--r:10deg;--d:18"><img src="assets/productos-demo/serie-umami/frontal-hamburguesa.webp" alt="Umami Hamburguesa"></figure>
+      <div class="v4-temp" aria-hidden="true">–18<small>°C</small></div>
+      <svg class="v4-badge" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="v4c" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#v4c">LUGALCO · VIGO · CONGELADO EN ORIGEN · </textPath></text><circle cx="100" cy="100" r="34"/><path d="M84 96c5-6 9 6 16 0s11 6 16 0M84 106c5-6 9 6 16 0s11 6 16 0" fill="none" stroke-width="4"/></svg>
+    </div>
+  </div>
+  <ul class="v4-stats" data-stats></ul>
+</section>
+<section class="v4-reel" id="v4-reel" aria-label="Gama Umami"></section>
+<div id="lg-sections"></div>
+</main>
+<nav class="ver-switch" aria-label="Versión visual"><a href="v1.html" data-v="1">1<span class="n"> · Storefront</span></a><a href="v2.html" data-v="2">2<span class="n"> · Glass</span></a><a href="v3.html" data-v="3">3<span class="n"> · Cálido</span></a><a href="v4.html" data-v="4">4<span class="n"> · Pop</span></a></nav><script>(function(){var v=document.documentElement.dataset.ver;document.querySelectorAll(".ver-switch a").forEach(function(a){if(a.dataset.v===v)a.setAttribute("aria-current","page")})})()</script><script src="data/catalogo.js"></script><script src="data/fichas-productos.js"></script><script src="data/tarifas-demo.js"></script><script src="shared/i18n.js"></script><script src="shared/i18n-extra.js"></script><script src="shared/store.js"></script><script src="shared/ficha.js"></script><script src="shared/hero.js"></script><script src="shared/portal.js"></script><script src="shared/fx.js"></script>
+</body>
+</html>

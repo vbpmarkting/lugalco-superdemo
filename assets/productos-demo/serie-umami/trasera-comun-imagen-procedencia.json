@@ -1,0 +1,8 @@
+{
+  "slug": "trasera-comun",
+  "rear": true,
+  "prompt": "Use case: precise-object-edit. Edit the supplied photographic REAR view of the Umami bag into a neutral rear label template shared across the planned product range. Change ONLY the large product-specific word 'GUISANTES': remove it completely and replace it with 'INFORMACIÓN DEL PRODUCTO'. Keep the small white lowercase 'umami' at the top. Keep ALL of the physical bag black, including top seal, side edges and bottom seal, with white typography only. There must be zero yellow, zero window and zero visible food on the rear. Preserve the exact bag silhouette, plastic wrinkles, lighting, realistic materials, studio background and shadow. White headings 'Ingredientes', 'Información nutricional', 'Conservación', 'Lote y fecha', with 'Pendiente de validación' and a small table containing dashes only; do not invent values, numbers, certifications or barcodes. Bottom line 'PROPUESTA DE ENVASE'. No product name or product-specific ingredients anywhere. Same single realistic pillow bag fully visible, portrait 4:5.",
+  "reference": "C:/Users/acliente8/Documents/Codex/2026-10-14/bus/outputs/lugalco-web/assets/productos-demo/umami-guisantes-trasera-negra.webp",
+  "generatedPath": "C:\\Users\\acliente8\\.codex\\generated_images\\01a13ac1-b91f-7e93-8a55-13a0232d42d0\\exec-c667a831-00d8-4043-beef-64bff77b3299.png",
+  "status": "completed"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "umami-san-jacobo",
+  "slug": "san-jacobo",
+  "name": "SAN JACOBO",
+  "requestId": "90f6a0fc-9db1-4f83-b9e4-7473bd9e5e65",
+  "modelId": "heygen-video-1",
+  "duration": 5,
+  "resolution": "480p",
+  "authorizedCredits": 10,
+  "front": "assets/productos-demo/serie-umami/frontal-san-jacobo.webp",
+  "back": "assets/productos-demo/serie-umami/trasera-comun.webp",
+  "status": "completed",
+  "aspectRatio": "3:4",
+  "contentReferenceImages": [
+    "https://images.meigen.ai/reference-pack-sources/mcp/f90b0ce9c284b0d19f4609de7043789e86a1ac198a2f5423d50bc0f10aa0632c.webp",
+    "https://images.meigen.ai/reference-pack-sources/mcp/00619b9b3535840014b9646573c7bf9f1dfde7b420c2ce89768f6c4e1f8d06f3.webp"
+  ],
+  "prompt": "One continuous 5-second photorealistic studio product video of ONE physical Umami flexible frozen-food pillow bag, representing SAN JACOBO. [image1] is its exact FRONT. [image2] is the approved neutral BACK design for this SAME bag, not a second object. Copy the exact front product name, bag shape, contents and typography from [image1]; never replace the visible food with a different product. Keep photographic texture, plastic crinkles, soft shadow, cream studio background and full-bag framing. FRONT ONLY: yellow top header with the black lowercase 'umami' wordmark; black body, black side borders and black bottom seal; white printed product name; transparent front window with exactly the food shown in [image1]. BACK is ENTIRELY BLACK including top header and all seals, with small WHITE informational text/table exactly in the generic layout of [image2]. No yellow, no window and no visible food on the back. Preserve the neutral rear headings and pending-validation markers; do not invent nutritional values or claims. Fixed camera, no zoom, no cuts. Begin front-facing, smoothly rotate to show the whole all-black BACK clearly in the middle of the clip, then continue around to the FRONT. End with a tiny opening only at the narrow top heat-sealed edge above the logo, revealing a glimpse of the same product inside. Keep the front logo panel flat and the printed words unchanged and legible. Prioritize correct front food, the black back and stable lettering over an elaborate opening. No rigid jar, hinges, hands, tools, additional bags, flying food, new graphics, watermarks, cartoon styling or synthetic-looking 3D render. Natural realistic filmed packaging.",
+  "responseVersion": 3,
+  "productId": "umami-san-jacobo",
+  "success": true,
+  "generationId": "6d18c604-d53c-4277-8559-cf3e0376f161",
+  "mediaType": "video",
+  "creditsUsed": 10,
+  "creditsStatus": "confirmed",
+  "urls": [
+    "https://images.meigen.ai/generations/2026-11/6d18c604-d53c-4277-8559-cf3e0376f161.mp4"
+  ],
+  "deduped": true,
+  "nextAction": "use_result",
+  "originalUrl": "https://images.meigen.ai/generations/2026-11/6d18c604-d53c-4277-8559-cf3e0376f161.mp4",
+  "originalAsset": "assets/productos-demo/animaciones-umami/san-jacobo-original.mp4",
+  "webAsset": "assets/productos-demo/animaciones-umami/san-jacobo.mp4",
+  "reviewStatus": "reviewed_demo",
+  "technicalScope": "Propuesta conceptual. Contenido, envase, texto trasero y apertura ilustrativos, pendientes de validación.",
+  "reviewNotes": "Revisados frontal, giro, trasera negra y apertura final. Animación conceptual; leves variaciones generativas en pliegues y apertura."
+}

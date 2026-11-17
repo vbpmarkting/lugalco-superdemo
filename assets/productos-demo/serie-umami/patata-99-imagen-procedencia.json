@@ -1,0 +1,9 @@
+{
+  "slug": "patata-99",
+  "label": "PATATA 9/9",
+  "food": "uncooked frozen straight-cut potato fries, 9 by 9 millimeter style",
+  "prompt": "Use case: product-mockup. Edit the supplied Umami bag photograph to create a matching FRONT photograph for the product PATATA 9/9. Preserve the EXACT brand design, bag shape, physical plastic texture, crinkles, front camera angle, warm off-white studio background and shadow of the reference. A realistic flexible pillow bag, not a standup pouch. TOP HEADER ONLY is yellow #ffbf3f with large black lowercase 'umami'. The rest of the body, BOTH SIDE EDGES around the window and the BOTTOM SEALED STRIP are BLACK. White product title exactly 'PATATA 9/9' on the black band beneath the yellow header. Below that a clear window showing uncooked frozen straight-cut potato fries, 9 by 9 millimeter style. Keep all food visibly contained inside the bag. No yellow below the top header. No other text, no net-weight text, no invented facts, no claims, no nutrition, no certifications, no barcodes, no hands or other objects. The contents are illustrative for a packaging demo. Keep the full individual bag within the frame and preserve premium natural photographic realism; never look like a flat render or cartoon. Portrait 4:5 composition, generous margins.",
+  "reference": "C:/Users/acliente8/Documents/Codex/2026-10-14/bus/outputs/lugalco-web/assets/productos-demo/umami-envase-guisantes-v2.webp",
+  "generatedPath": "C:\\Users\\acliente8\\.codex\\generated_images\\01a13ac1-b91f-7e93-8a55-13a0232d42d0\\exec-08ca7cc5-613d-4fa9-8337-9f7855777d68.png",
+  "status": "completed"
+}

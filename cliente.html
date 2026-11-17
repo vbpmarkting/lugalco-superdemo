@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es" data-ver="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lugalco · Área cliente</title>
+<meta name="description" content="Superdemo de Lugalco: catálogo, Umami Lab, fichas, área cliente y panel.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="shared/base.css"><link rel="stylesheet" href="shared/client.css"><link rel="stylesheet" href="shared/extra.css"><script>(function(){var v="1";try{v=new URLSearchParams(location.search).get("v")||localStorage.getItem("lg-sd-ver")||"1"}catch(e){}if(["1","2","3","4"].indexOf(v)<0)v="1";document.documentElement.dataset.ver=v;document.write('<link rel="stylesheet" href="skins/v'+v+'.css">')})()</script>
+<meta name="robots" content="noindex">
+</head>
+<body class="cl">
+<p class="lg-demo" data-t="cNotice">Demo: los datos se guardan solo en este navegador.</p>
+<header class="lg-header">
+  <a href="v1.html" class="lg-logo" id="cl-home" aria-label="Lugalco, volver a la web"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 13c6-7 11 7 17 0s11 7 16 0M4 21c6-7 11 7 17 0s11 7 16 0M4 29c6-7 11 7 17 0s11 7 16 0" stroke="currentColor" stroke-width="2.5"/></svg> lugalco</a>
+  <p class="cl-who" id="cl-who" hidden></p>
+  <div class="lg-langs" role="group" aria-label="Idioma"><button type="button" data-lang="es">ES</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+  <button type="button" class="lg-btn lg-btn-ghost cl-logout" id="cl-logout" data-t="cLogout" hidden>Salir</button>
+</header>
+<main id="cl-app" class="cl-main"></main>
+<dialog id="cl-dialog" class="cl-dialog" aria-labelledby="cl-dialog-title"></dialog>
+<div class="cl-toast" id="cl-toast" role="status" aria-live="polite"></div>
+<nav class="ver-switch" aria-label="Versión visual"><a href="cliente.html?v=1" data-v="1">1<span class="n"> · Storefront</span></a><a href="cliente.html?v=2" data-v="2">2<span class="n"> · Glass</span></a><a href="cliente.html?v=3" data-v="3">3<span class="n"> · Cálido</span></a><a href="cliente.html?v=4" data-v="4">4<span class="n"> · Pop</span></a></nav><script>(function(){var v=document.documentElement.dataset.ver;document.querySelectorAll(".ver-switch a").forEach(function(a){if(a.dataset.v===v)a.setAttribute("aria-current","page")})})()</script><script src="data/catalogo.js"></script><script src="data/fichas-productos.js"></script><script src="data/tarifas-demo.js"></script><script src="shared/i18n.js"></script><script src="shared/i18n-extra.js"></script><script src="shared/store.js"></script><script src="shared/ficha.js"></script><script src="shared/cliente.js"></script>
+</body>
+</html>

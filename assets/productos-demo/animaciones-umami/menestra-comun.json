@@ -1,0 +1,37 @@
+{
+  "id": "umami-menestra-comun",
+  "slug": "menestra-comun",
+  "name": "MENESTRA COMÚN",
+  "requestId": "dae402ec-b7ef-4df9-a3a6-08defc7d6d04",
+  "modelId": "heygen-video-1",
+  "duration": 5,
+  "resolution": "480p",
+  "authorizedCredits": 10,
+  "front": "assets/productos-demo/serie-umami/frontal-menestra-comun.webp",
+  "back": "assets/productos-demo/serie-umami/trasera-comun.webp",
+  "status": "completed",
+  "aspectRatio": "3:4",
+  "contentReferenceImages": [
+    "https://images.meigen.ai/reference-pack-sources/mcp/7cf4d66fe69448645fb3f3c71dfc2c516b9f85438d55d7ca3988fc3350e955ba.webp",
+    "https://images.meigen.ai/reference-pack-sources/mcp/00619b9b3535840014b9646573c7bf9f1dfde7b420c2ce89768f6c4e1f8d06f3.webp"
+  ],
+  "prompt": "One continuous 5-second photorealistic studio product video of ONE physical Umami flexible frozen-food pillow bag, representing MENESTRA COMÚN. [image1] is its exact FRONT. [image2] is the approved neutral BACK design for this SAME bag, not a second object. Copy the exact front product name, bag shape, contents and typography from [image1]; never replace the visible food with a different product. Keep photographic texture, plastic crinkles, soft shadow, cream studio background and full-bag framing. FRONT ONLY: yellow top header with the black lowercase 'umami' wordmark; black body, black side borders and black bottom seal; white printed product name; transparent front window with exactly the food shown in [image1]. BACK is ENTIRELY BLACK including top header and all seals, with small WHITE informational text/table exactly in the generic layout of [image2]. No yellow, no window and no visible food on the back. Preserve the neutral rear headings and pending-validation markers; do not invent nutritional values or claims. Fixed camera, no zoom, no cuts. Begin front-facing, smoothly rotate to show the whole all-black BACK clearly in the middle of the clip, then continue around to the FRONT. End with a tiny opening only at the narrow top heat-sealed edge above the logo, revealing a glimpse of the same product inside. Keep the front logo panel flat and the printed words unchanged and legible. Prioritize correct front food, the black back and stable lettering over an elaborate opening. No rigid jar, hinges, hands, tools, additional bags, flying food, new graphics, watermarks, cartoon styling or synthetic-looking 3D render. Natural realistic filmed packaging.",
+  "responseVersion": 3,
+  "productId": "umami-menestra-comun",
+  "success": true,
+  "generationId": "f6b45a3b-e820-4c30-bda5-34ae30035ae2",
+  "mediaType": "video",
+  "creditsUsed": 10,
+  "creditsStatus": "confirmed",
+  "urls": [
+    "https://images.meigen.ai/generations/2026-11/f6b45a3b-e820-4c30-bda5-34ae30035ae2.mp4"
+  ],
+  "deduped": true,
+  "nextAction": "use_result",
+  "originalUrl": "https://images.meigen.ai/generations/2026-11/f6b45a3b-e820-4c30-bda5-34ae30035ae2.mp4",
+  "originalAsset": "assets/productos-demo/animaciones-umami/menestra-comun-original.mp4",
+  "webAsset": "assets/productos-demo/animaciones-umami/menestra-comun.mp4",
+  "reviewStatus": "reviewed_demo",
+  "technicalScope": "Propuesta conceptual. Contenido, envase, texto trasero y apertura ilustrativos, pendientes de validación.",
+  "reviewNotes": "Revisados frontal, giro, trasera negra y apertura final. Animación conceptual; leves variaciones generativas en pliegues y apertura."
+}
