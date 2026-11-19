@@ -80,6 +80,7 @@
     const f = e.target; const id = f.dataset.id;
     const prices = {}; f.querySelectorAll('[data-line]').forEach(tr => { const val = tr.querySelector('input').value; prices[tr.dataset.line] = val === '' ? null : Number(val); });
     LG.updateQuote(id, q => { q.status = 'answered'; q.offer = { answeredAt: new Date().toISOString(), terms: f.querySelector('#pn-terms').value.trim(), prices }; });
+    { const q = LG.quotes().find(x => x.id === id); if (q) LG.mail(`[Lugalco] Oferta enviada ${q.id} · ${q.company || q.email}`, LG.offerSummary(q), q.email); }
     toast(`Oferta ${id} enviada. El cliente ya la ve en Mis cotizaciones.`);
     state.filter = 'answered'; render(); totals();
   });

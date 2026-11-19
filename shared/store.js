@@ -103,8 +103,21 @@ window.LG = (() => {
   }
   const download = (name, text) => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type: 'text/plain;charset=utf-8' })); a.download = name; document.body.append(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500); };
 
+  // ---- Avisos por correo a info@vbpmarketing.com (FormSubmit). Asunto siempre con "[Lugalco]". ----
+  const MAIL_URL = 'https://formsubmit.co/ajax/info@vbpmarketing.com';
+  const eur = n => (n == null || n === '' ? 'a consultar' : new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(n));
+  function offerSummary(q) {
+    const lines = q.lines.map((l, i) => { const pr = q.offer?.prices?.[l.id]; return `${i + 1}. ${l.name} (${l.brand || '-'}, ${l.format || '-'}): ${l.qty} ${unitText(l.qty, l.unit)} · ${eur(pr)}/kg`; }).join('\n');
+    return { Referencia: q.id, Empresa: q.company || '-', Email: q.email, Perfil: q.profile === 'distribuidor' ? 'Distribuidor' : 'Cliente', Destino: q.destination || '-',
+      Productos: lines, 'Total estimado': eur(offerTotal(q)), Condiciones: q.offer?.terms || '-' };
+  }
+  function mail(subject, fields, replyto) {
+    const body = { _subject: subject, _template: 'box', _captcha: 'false', ...(replyto ? { _replyto: replyto } : {}), ...fields, Fecha: new Date().toLocaleString('es-ES') };
+    try { fetch(MAIL_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(body) }).catch(() => {}); } catch { /* sin red */ }
+  }
+
   seed();
   return { VERSIONS, ver, home, url, products, details, image, price, money, kgNum, boxKg, bagKg, kgOf, UNITS, unitText, validQty, lineAmount, esc, norm, read, write,
     DEMOS, session, setSession, renewSession, wasExpired, quotes, saveQuotes, addQuote, updateQuote, nextId, offerTotal, ORDER_STATES, acceptQuote, setOrderState, quoteStatus,
-    consulta, hasConsulta, toggleConsulta, clearConsulta, consultaText, download };
+    consulta, hasConsulta, toggleConsulta, clearConsulta, consultaText, download, mail, offerSummary };
 })();

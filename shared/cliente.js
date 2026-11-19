@@ -308,7 +308,7 @@
     const rm = e.target.closest('[data-remove]');
     if (rm) { state.basket.delete(rm.dataset.remove); if (state.basket.size) openReview(); else dialog.close(); refreshList(); }
     const ac = e.target.closest('[data-accept]');
-    if (ac) { LG.renewSession(); LG.acceptQuote(ac.dataset.accept); dialog.close(); state.view = 'orders'; render(); toast(t('cAccepted')); scrollTo(0, 0); }
+    if (ac) { LG.renewSession(); const aq = LG.acceptQuote(ac.dataset.accept); if (aq) LG.mail(`[Lugalco] Cotizacion ACEPTADA ${aq.id} · ${aq.company || aq.email}`, LG.offerSummary(aq), aq.email); dialog.close(); state.view = 'orders'; render(); toast(t('cAccepted')); scrollTo(0, 0); }
     if (e.target.id === 'cl-print') window.print();
   });
   dialog.addEventListener('submit', e => { if (e.target.id === 'cl-send-form') { e.preventDefault(); send(); } });
