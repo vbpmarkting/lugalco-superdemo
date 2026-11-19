@@ -226,6 +226,8 @@
       const email = app.querySelector('#cl-email').value.trim().toLowerCase();
       state.profile = app.querySelector('#cl-profile').value;
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { state.err = t('cBadEmail'); state.email = email; render(); return; }
+      // Acceso directo para presentar la demo: correo@correo.com entra sin código
+      if (email === 'correo@correo.com') { login({ email, name: 'Cliente', company: 'Empresa de demostración', profile: state.profile }); return; }
       state.email = email; state.code = String(Math.floor(100000 + Math.random() * 900000)); state.view = 'code'; state.err = '';
       render(); toast(t('cCodeSent')(state.code)); app.querySelector('#cl-code').focus();
     } else {
