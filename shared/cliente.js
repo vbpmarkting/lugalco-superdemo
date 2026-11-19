@@ -116,6 +116,23 @@
     if (!dialog.open) dialog.showModal();
   }
 
+  // Aviso por correo de cada solicitud de cotización (FormSubmit → info@vbpmarketing.com).
+  // El asunto empieza siempre por "[Lugalco]" para que el filtro de Gmail lo etiquete.
+  const QUOTE_MAIL = 'https://formsubmit.co/ajax/info@vbpmarketing.com';
+  function notifyQuote(q) {
+    const detalle = q.lines.map((l, i) => `${i + 1}. ${l.name} (${l.brand || '-'}, ${l.format || '-'}): ${l.qty} ${LG.unitText(l.qty, l.unit)}`).join('\n');
+    const body = {
+      _subject: `[Lugalco] Solicitud de cotización ${q.id} · ${q.company || q.email}`,
+      _template: 'box', _captcha: 'false', _replyto: q.email,
+      Referencia: q.id, Empresa: q.company || '-', Email: q.email,
+      Perfil: q.profile === 'distribuidor' ? 'Distribuidor' : 'Cliente',
+      Destino: q.destination, Productos: detalle, Observaciones: q.note || '-',
+      Fecha: new Date(q.createdAt).toLocaleString('es-ES')
+    };
+    fetch(QUOTE_MAIL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(body) })
+      .catch(() => { /* la demo sigue funcionando aunque falle el correo */ });
+  }
+
   function send() {
     const s = LG.renewSession(); if (!s) { dialog.close(); render(); return; }
     const dest = dialog.querySelector('#cl-dest');
@@ -123,6 +140,7 @@
     const lines = [...state.basket].map(([id, l]) => { const p = products.find(x => x.id === id); return { id, name: p.name, brand: p.brand, format: p.format, qty: l.qty, unit: l.unit }; });
     const q = { id: LG.nextId(), email: s.email, company: s.company, profile: s.profile, createdAt: new Date().toISOString(), destination: dest.value.trim(), note: dialog.querySelector('#cl-note').value.trim(), lines, status: 'pending' };
     LG.addQuote(q); LG.setSession({ ...s, lastDest: q.destination }); LG.clearConsulta();
+    notifyQuote(q);
     state.basket.clear(); state.lastSent = q; state.view = 'sent';
     dialog.close(); render();
   }
