@@ -134,3 +134,15 @@ body.cl .ver-switch .n{display:none}
 @media (max-width:560px){body.cl .ver-switch{display:none}}
 @media (max-width:640px){.ver-switch .n{display:none}.ver-switch a{padding:8px 13px}}
 .ver-switch .n{display:none}.ver-switch a[aria-current] .n{display:inline}
+/* Panel: secciones, tarifas y condiciones */
+.pn-nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 24px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.pn-nav button{border:1.5px solid var(--line);background:transparent;color:inherit;border-radius:999px;padding:9px 16px;min-height:42px;font:inherit;font-weight:600;cursor:pointer}
+.pn-nav button[aria-current="true"]{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.pn-tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.pn-tools input{flex:1 1 260px;min-height:44px}
+.pn-tools select{min-height:44px}
+.pn-tarifa tr.is-mod td:first-child b::after{content:" · modificado";font-weight:500;font-size:12px;color:var(--muted)}
+.pn-tarifa td:nth-child(4){color:var(--muted);font-variant-numeric:tabular-nums}
+.pn-tarifa td:last-child{white-space:nowrap}
+.pn-cond-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 18px}
+.pn-cond input,.pn-cond textarea{width:100%}

@@ -5,7 +5,22 @@ window.LG = (() => {
   const prices = window.LUGALCO_DEMO_PRICES || {};
   const fix = p => (p ? p.replace(/^\.?\//, '') : null);
   const image = p => { const d = details[p.id] || {}; return fix(d.mockup || d.photo); };
-  const price = p => prices[p.sourceProductId || p.id] ?? null;
+  // Tarifas: las que Javier edita en el panel mandan sobre la tarifa base (null = a consultar)
+  const PKEY = 'lg-sd-prices';
+  const keyOf = p => p.sourceProductId || p.id;
+  const priceOverrides = () => { try { return JSON.parse(localStorage.getItem(PKEY)) || {}; } catch { return {}; } };
+  const basePrice = p => prices[keyOf(p)] ?? null;
+  const price = p => { const o = priceOverrides(); const k = keyOf(p); return k in o ? o[k] : basePrice(p); };
+  const isCustomPrice = p => keyOf(p) in priceOverrides();
+  const setPrice = (p, v) => { const o = priceOverrides(); o[keyOf(p)] = v; try { localStorage.setItem(PKEY, JSON.stringify(o)); } catch { /* */ } };
+  const resetPrice = p => { const o = priceOverrides(); delete o[keyOf(p)]; try { localStorage.setItem(PKEY, JSON.stringify(o)); } catch { /* */ } };
+  const resetPrices = () => { try { localStorage.removeItem(PKEY); } catch { /* */ } };
+  // Condiciones comerciales que Javier define una vez y se aplican a cada oferta
+  const CKEY2 = 'lg-sd-conditions';
+  const COND_DEFAULT = { iva: 'Precios por kg, sin IVA', transporte: 'Portes no incluidos', validez: 7, pago: 'Pago a 30 días', minimo: '', descDist: 0, notas: 'Disponibilidad confirmada al aceptar.' };
+  const conditions = () => { try { return { ...COND_DEFAULT, ...(JSON.parse(localStorage.getItem(CKEY2)) || {}) }; } catch { return { ...COND_DEFAULT }; } };
+  const setConditions = c => { try { localStorage.setItem(CKEY2, JSON.stringify(c)); } catch { /* */ } };
+  const termsText = (c = conditions()) => [c.iva, c.transporte, c.validez ? `Validez ${c.validez} días` : '', c.pago, c.minimo ? `Pedido mínimo: ${c.minimo}` : '', c.notas].map(x => String(x || '').trim().replace(/\.$/, '')).filter(Boolean).join('. ') + '.';
   const money = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
   const kgNum = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 1 });
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -119,5 +134,6 @@ window.LG = (() => {
   seed();
   return { VERSIONS, ver, home, url, products, details, image, price, money, kgNum, boxKg, bagKg, kgOf, UNITS, unitText, validQty, lineAmount, esc, norm, read, write,
     DEMOS, session, setSession, renewSession, wasExpired, quotes, saveQuotes, addQuote, updateQuote, nextId, offerTotal, ORDER_STATES, acceptQuote, setOrderState, quoteStatus,
-    consulta, hasConsulta, toggleConsulta, clearConsulta, consultaText, download, mail, offerSummary };
+    consulta, hasConsulta, toggleConsulta, clearConsulta, consultaText, download, mail, offerSummary,
+    basePrice, isCustomPrice, setPrice, resetPrice, resetPrices, COND_DEFAULT, conditions, setConditions, termsText };
 })();
