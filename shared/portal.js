@@ -104,7 +104,7 @@
       <ol>${how.map(([h, p]) => `<li><h3>${esc(h)}</h3><p>${esc(p)}</p></li>`).join('')}</ol>
       <a class="lg-btn lg-btn-strong" href="${esc(LG.url('cliente.html'))}">${esc(t('howCta'))}</a></section>
     <footer class="lg-footer"><span class="lg-footer-logo">lugalco</span><span>${esc(t('footer'))}</span>
-      <a href="creditos-umami.html">${esc(t('labCredits'))}</a><a href="${esc(LG.url('panel.html'))}">${esc(t('panel'))}</a><a href="index.html">${esc(t('otherVersions'))}</a></footer>`;
+      <a href="creditos-umami.html">${esc(t('labCredits'))}</a><a href="index.html">${esc(t('otherVersions'))}</a></footer>`;
     renderList(); renderLab();
   }
 
