@@ -146,3 +146,22 @@ body.cl .ver-switch .n{display:none}
 .pn-tarifa td:last-child{white-space:nowrap}
 .pn-cond-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 18px}
 .pn-cond input,.pn-cond textarea{width:100%}
+/* Importador de tarifas */
+.pn-head-actions{display:flex;gap:10px;flex-wrap:wrap}
+.pn-import{width:min(760px,94vw);max-height:90vh;padding:0}
+.pn-imp-body{padding:24px clamp(18px,3vw,32px)}
+.pn-imp-body h2{margin:0 0 6px}
+.pn-imp-body > p{color:var(--muted);margin:0 0 16px}
+.pn-drop{display:grid;justify-items:center;gap:6px;text-align:center;padding:36px 20px;border:2px dashed var(--line);border-radius:calc(var(--radius-sm,8px) + 6px);cursor:pointer;transition:border-color .2s,background .2s}
+.pn-drop:hover,.pn-drop.is-over{border-color:var(--accent);background:var(--surface)}
+.pn-drop small{color:var(--muted)}
+.pn-imp-tips{color:var(--muted);font-size:14px;padding-left:18px;margin:16px 0 0}
+.pn-progress{height:8px;border-radius:99px;background:var(--surface);overflow:hidden;margin:18px 0 10px}
+.pn-progress span{display:block;height:100%;width:0;background:var(--accent);transition:width .5s ease}
+.pn-imp-step{font-size:14px;color:var(--muted)}
+.pn-imp-table{max-height:44vh;overflow:auto;border:1px solid var(--line);border-radius:var(--radius-sm,8px);margin-bottom:14px}
+.pn-imp-table table{width:100%;border-collapse:collapse;font-size:14px}
+.pn-imp-table th,.pn-imp-table td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;font-variant-numeric:tabular-nums}
+.pn-imp-table th{position:sticky;top:0;background:var(--bg,#fff)}
+.pn-imp-table .is-up{color:#c2410c;font-weight:600}.pn-imp-table .is-down{color:#15803d;font-weight:600}.pn-imp-table .is-new{font-weight:600}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
